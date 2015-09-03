@@ -1,5 +1,7 @@
 # Data Processing with BigQuery
 
+Show Options, save results to table, allow big results.
+
 Step 1. Filter Repos
 
 ``` sql

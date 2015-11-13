@@ -51,7 +51,7 @@ func NewBQClient(pemPath string) (*bqclient, error) {
 	return c, nil
 }
 
-func (c *bqclient) getQueryJob(query, dstTable string) (*bigquery.Job, error) {
+func (c *bqclient) JobQuery(query, dstTable string) *bigquery.Job {
 	dstTableRef := &bigquery.TableReference{
 		ProjectId: c.projectId,
 		DatasetId: c.datasetId,
@@ -76,8 +76,30 @@ func (c *bqclient) getQueryJob(query, dstTable string) (*bigquery.Job, error) {
 
 	return &bigquery.Job{
 		Configuration: conf,
-	}, nil
+	}
 }
 
-func bqexport(sql string, path string) error {
+func (c *bqclient) JobExtrac(table, gspath string) *bigquery.Job {
+	tableRef := &bigquery.TableReference{
+		ProjectId: c.projectId,
+		DatasetId: c.datasetId,
+		TableId:   table,
+	}
+	extract := &bigquery.JobConfigurationExtract{
+		SourceTable:       tableRef,
+		DestinationUris:   []string{*gspath},
+		DestinationFormat: "CSV",
+		Compression:       "GZIP",
+	}
+	conf := &bigquery.JobConfiguration{
+		Extract: extract,
+	}
+
+	return &bigquery.Job{
+		Configuration: conf,
+	}
+}
+
+func (c *bqclient) startJob(j *bigquery.Job) (*bigquery.Job, error) {
+	return service.Jobs.Insert(c.projectId, job).Do()
 }

@@ -5,10 +5,9 @@
 package pipeline
 
 import (
-	"flag"
 	"fmt"
 	"io/ioutil"
-	"os"
+	"log"
 	"time"
 
 	"golang.org/x/oauth2"
@@ -25,6 +24,9 @@ type bqclient struct {
 
 	projectId string
 	datasetId string
+
+	JobStatusPollingInterval time.Duration
+	JobStatusPollingMaxTries int
 }
 
 func getBigqueryService(pemPath string) (*bigquery.Service, error) {
@@ -42,7 +44,10 @@ func getBigqueryService(pemPath string) (*bigquery.Service, error) {
 }
 
 func NewBQClient(pemPath string) (*bqclient, error) {
-	c := &bqclient{}
+	c := &bqclient{
+		JobStatusPollingMaxTries: 20,
+		JobStatusPollingInterval: 5 * time.Second,
+	}
 	service, err := getBigqueryService(pemPath)
 	if err != nil {
 		return nil, err
@@ -68,7 +73,6 @@ func (c *bqclient) JobQuery(query, dstTable string) *bigquery.Job {
 		AllowLargeResults: true,
 		WriteDisposition:  "WRITE_TRUNCATE",
 		CreateDisposition: "CREATE_IF_NEEDED",
-		FlattenResults:    flatten,
 	}
 	conf := &bigquery.JobConfiguration{
 		Query: qConf,
@@ -79,7 +83,7 @@ func (c *bqclient) JobQuery(query, dstTable string) *bigquery.Job {
 	}
 }
 
-func (c *bqclient) JobExtrac(table, gspath string) *bigquery.Job {
+func (c *bqclient) JobExtract(table, gspath string) *bigquery.Job {
 	tableRef := &bigquery.TableReference{
 		ProjectId: c.projectId,
 		DatasetId: c.datasetId,
@@ -87,7 +91,7 @@ func (c *bqclient) JobExtrac(table, gspath string) *bigquery.Job {
 	}
 	extract := &bigquery.JobConfigurationExtract{
 		SourceTable:       tableRef,
-		DestinationUris:   []string{*gspath},
+		DestinationUris:   []string{gspath},
 		DestinationFormat: "CSV",
 		Compression:       "GZIP",
 	}
@@ -100,6 +104,41 @@ func (c *bqclient) JobExtrac(table, gspath string) *bigquery.Job {
 	}
 }
 
-func (c *bqclient) startJob(j *bigquery.Job) (*bigquery.Job, error) {
-	return service.Jobs.Insert(c.projectId, job).Do()
+// run a series of jobs sequentially and synchronously
+func (c *bqclient) RunSequentialJobs(jobs []*bigquery.Job) error {
+	for _, job := range jobs {
+		if err := c.RunJob(job); err != nil {
+			return err
+		}
+	}
+	return nil
+}
+
+// RunJob runs a bq Job synchronously.
+func (c *bqclient) RunJob(job *bigquery.Job) error {
+	job, err := c.service.Jobs.Insert(c.projectId, job).Do()
+	if err != nil {
+		return fmt.Errorf("failed to insert job: %v", err)
+	}
+
+	jobId := job.JobReference.JobId
+	log.Printf("[Job %s] start polling ....", jobId)
+	for i := 0; i < c.JobStatusPollingMaxTries; i++ {
+		time.Sleep(c.JobStatusPollingInterval)
+		j, err := c.service.Jobs.Get(c.projectId, jobId).Do()
+		if err != nil {
+			log.Printf("[Job %s] failed to get job status: %v\n", jobId, err)
+			continue
+		}
+		log.Printf("[Job %s] status: %s\n", jobId, j.Status.State)
+		if j.Status.State != "DONE" {
+			continue
+		}
+		if err := j.Status.ErrorResult; err != nil {
+			return fmt.Errorf("[Job %s] job failed: %v", err)
+		}
+
+		return nil
+	}
+	return fmt.Errorf("Timeout")
 }

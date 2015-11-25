@@ -2,7 +2,7 @@
 //  1. move data from bq to local.
 //  2. run queries on bq to extract data
 //  3. store dumped data to database
-package pipeline
+package bqclient
 
 import (
 	"fmt"

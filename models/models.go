@@ -1,7 +1,6 @@
 package models
 
 type Repo struct {
-	Id          uint64
 	ShortPath   string
 	URL         string
 	Stars       int
@@ -10,28 +9,34 @@ type Repo struct {
 	Website     string
 }
 
-type RepoIndex struct {
-	sp2id map[string]uint64
-	id2sp map[uint64]string
-}
-
 type RepoStore struct {
-	index *RepoIndex
-	repos map[uint64]*Repo
-	// Recommendations, id to ids mapping
-	rec map[uint64][]uint64
+	repos map[string]*Repo
+	rec map[string][]string
 }
 
 func (r *RepoStore) GetSimilarRepos(repo *Repo) []*Repo {
-
+  
 }
 
-func (r *RepoStore) GetRepoByIds(ids []uint64) []*Repo {
+func (r *RepoStore) GetRepoByShortPath(s string) *Repo {
+	return r.repos[s]
+}
+
+func (r *RepoStore) GetRepoByShortPaths(ss []string) []*Repo {
+	repos := []*Repo{}
+	for _, s := range ss {
+	  if r.repos[s] != nil {
+			repos = append(repos, r.repos[s])
+		}
+	}
+	return repos
 }
 
 func InitRepoStore() *RepoStore {
 }
-
+// RepoStoreFromCSV creates a repo store from raw csv files
+// 1) repos.csv, 
+// 2) rec.csv
 func RepoStoreFromCSV(path string) (*RepoStore, error) {
 }
 

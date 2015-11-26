@@ -1,7 +1,8 @@
 package bqclient
 
 import (
-	"reflect"
+	"encoding/json"
+	"fmt"
 	"testing"
 
 	"google.golang.org/api/bigquery/v2"
@@ -20,7 +21,7 @@ func TestJobFile(t *testing.T) {
 	}{
 		{
 			"testdata/01_query_test001.yml",
-			c.JobQuery("test001", "SELECT * FROM [publicdata:samples.shakespeare] LIMIT 10"),
+			c.JobQuery("SELECT * FROM [publicdata:samples.shakespeare] LIMIT 10", "test001"),
 		},
 		{
 			"testdata/02_extract_test001.yml",
@@ -34,8 +35,10 @@ func TestJobFile(t *testing.T) {
 			t.Errorf("failed to get job from file: %v", err)
 			continue
 		}
-		if !reflect.DeepEqual(job, tc.wantJob) {
-			t.Errorf("got job %v, want %v", *job, *tc.wantJob)
+		jj, _ := json.Marshal(job)
+		wj, _ := json.Marshal(tc.wantJob)
+		if string(jj) != string(wj) {
+			t.Errorf("got job \n%v, want \n%v", string(jj), string(wj))
 		}
 	}
 }

@@ -2,10 +2,10 @@ package bqclient
 
 import (
 	"fmt"
-	"io/ioutil"
-
 	"google.golang.org/api/bigquery/v2"
 	yaml "gopkg.in/yaml.v2"
+	"io/ioutil"
+	"strings"
 )
 
 type jobConfig struct {
@@ -25,13 +25,11 @@ func (c *bqclient) JobFromFile(file string) (*bigquery.Job, error) {
 	if err := yaml.Unmarshal(data, &jc); err != nil {
 		return nil, fmt.Errorf("failed to parse file %v: %v", file, err)
 	}
-	fmt.Printf("%v", string(data))
-	fmt.Printf("%v", jc)
 	switch jc.Command {
 	case "query":
-		return c.JobQuery(jc.Query, jc.Table), nil
+		return c.JobQuery(strings.TrimSpace(jc.Query), strings.TrimSpace(jc.Table)), nil
 	case "extract":
-		return c.JobExtract(jc.Table, jc.Gspath), nil
+		return c.JobExtract(strings.TrimSpace(jc.Table), strings.TrimSpace(jc.Gspath)), nil
 	default:
 		return nil, fmt.Errorf("no such Command %v", jc.Command)
 	}

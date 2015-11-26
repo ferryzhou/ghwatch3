@@ -4,7 +4,7 @@ import (
 	"reflect"
 	"testing"
 
-	"google.golang.org/cloud/bigquery"
+	"google.golang.org/api/bigquery/v2"
 )
 
 func TestJobFile(t *testing.T) {
@@ -35,7 +35,7 @@ func TestJobFile(t *testing.T) {
 			continue
 		}
 		if !reflect.DeepEqual(job, tc.wantJob) {
-			t.Errorf("got job %v, want %v", job, tc.wantJob)
+			t.Errorf("got job %v, want %v", *job, *tc.wantJob)
 		}
 	}
 }

@@ -1,7 +1,8 @@
-query
+command: query
 
-repos
+table: repos
 
+query: >
 SELECT
   repository_name,
   repository_owner,

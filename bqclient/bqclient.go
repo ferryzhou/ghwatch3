@@ -1,7 +1,5 @@
-// package pipeline contains tools to
-//  1. move data from bq to local.
-//  2. run queries on bq to extract data
-//  3. store dumped data to database
+// package bigquery contains functions to
+//  1. run bigquery jobs such as query to table and export table to google storage.
 package bqclient
 
 import (

@@ -2,19 +2,13 @@ package bqclient
 
 import (
 	"encoding/json"
-	"fmt"
 	"testing"
 
 	"google.golang.org/api/bigquery/v2"
 )
 
 func TestJobFile(t *testing.T) {
-	pemPath := "g.pem"
-	c, err := NewBQClient(pemPath)
-	if err != nil {
-		t.Errorf("failed to start client: %v", err)
-	}
-
+	c := newTestClient(t)
 	testCases := []*struct {
 		file    string
 		wantJob *bigquery.Job

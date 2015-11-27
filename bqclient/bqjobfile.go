@@ -2,10 +2,11 @@ package bqclient
 
 import (
 	"fmt"
-	"google.golang.org/api/bigquery/v2"
-	yaml "gopkg.in/yaml.v2"
 	"io/ioutil"
 	"strings"
+
+	"google.golang.org/api/bigquery/v2"
+	yaml "gopkg.in/yaml.v2"
 )
 
 type jobConfig struct {

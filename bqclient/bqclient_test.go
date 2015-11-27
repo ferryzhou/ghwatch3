@@ -12,18 +12,23 @@ const (
 	test_bucket  = "bqclient_test"
 )
 
+func newTestClient(t *testing.T) *bqclient {
+	pemPath := "g.pem"
+	c, err := NewBQClient(pemPath)
+	if err != nil {
+		t.Fatalf("failed to start client: %v", err)
+	}
+	c.projectId = test_project
+	c.datasetId = test_dataset
+	return c
+}
+
 // Before testing, make sure
 //   1) pem file is copied to g.pem
 //   2) a dataset called bqclient_test is created.
 //   3) a data storage bucket bqclient_test is created.
 func TestBqJobs(t *testing.T) {
-	pemPath := "g.pem"
-	c, err := NewBQClient(pemPath)
-	if err != nil {
-		t.Errorf("failed to start client: %v", err)
-	}
-	c.projectId = test_project
-	c.datasetId = test_dataset
+	c := newTestClient(t)
 	// Configure a serial job pipeline.
 	// first query to table, second query to table, and then an extract.
 	jobs := []*bigquery.Job{

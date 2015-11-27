@@ -1,0 +1,5 @@
+command: extract
+
+table: test001
+
+gspath: gs://bqclient_test/bqclient_test.gzip 

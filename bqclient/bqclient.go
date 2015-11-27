@@ -45,7 +45,7 @@ func getBigqueryService(pemPath string) (*bigquery.Service, error) {
 
 func NewBQClient(pemPath string) (*bqclient, error) {
 	c := &bqclient{
-		JobStatusPollingMaxTries: 20,
+		JobStatusPollingMaxTries: 40,
 		JobStatusPollingInterval: 5 * time.Second,
 	}
 	service, err := getBigqueryService(pemPath)

@@ -1,0 +1,6 @@
+command: query
+
+table: test001
+
+query: >
+  SELECT * FROM [publicdata:samples.shakespeare] LIMIT 10

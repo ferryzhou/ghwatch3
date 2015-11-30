@@ -18,4 +18,4 @@ idea: download data from bigquery github table, analyze the data
 1. repos.csv
 	name, owner, created_at, watchers, language, discription, ...
 1. repo_recs.csv
-
+    shortPath, shortPath, score

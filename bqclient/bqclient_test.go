@@ -1,8 +1,6 @@
 package bqclient
 
 import (
-	"os"
-	"path"
 	"testing"
 
 	"google.golang.org/api/bigquery/v2"
@@ -14,10 +12,8 @@ const (
 	test_bucket  = "bqclient_test"
 )
 
-var test_pem = path.Join(os.Getenv("HOME"), ".gcp/default.pem")
-
 func newTestClient(t *testing.T) *bqclient {
-	c, err := NewBQClient(test_pem)
+	c, err := NewBQClient()
 	if err != nil {
 		t.Fatalf("failed to start client: %v", err)
 	}

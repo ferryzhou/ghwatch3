@@ -4,11 +4,10 @@ package bqclient
 
 import (
 	"fmt"
-	"io/ioutil"
 	"log"
 	"time"
 
-	"golang.org/x/oauth2"
+	"golang.org/x/net/context"
 	"golang.org/x/oauth2/google"
 	"google.golang.org/api/bigquery/v2"
 )
@@ -27,26 +26,23 @@ type bqclient struct {
 	JobStatusPollingMaxTries int
 }
 
-func getBigqueryService(pemPath string) (*bigquery.Service, error) {
-	// generate auth token and create service object
-	pemKeyBytes, err := ioutil.ReadFile(pemPath)
+func getBigqueryService() (*bigquery.Service, error) {
+	ctx := context.Background()
+
+	client, err := google.DefaultClient(ctx, bqEndpoint)
 	if err != nil {
-		return nil, fmt.Errorf("failed to read pem file: %s, error: %v", pemPath, err)
+		return nil, fmt.Errorf("failed to get client: %v", err)
 	}
-
-	conf, err := google.JWTConfigFromJSON(pemKeyBytes, bqEndpoint)
-
-	client := conf.Client(oauth2.NoContext)
 
 	return bigquery.New(client)
 }
 
-func NewBQClient(pemPath string) (*bqclient, error) {
+func NewBQClient() (*bqclient, error) {
 	c := &bqclient{
 		JobStatusPollingMaxTries: 40,
 		JobStatusPollingInterval: 5 * time.Second,
 	}
-	service, err := getBigqueryService(pemPath)
+	service, err := getBigqueryService()
 	if err != nil {
 		return nil, err
 	}

@@ -5,8 +5,9 @@ idea: download data from bigquery github table, analyze the data
  and visualize the data.
 
 ## Test Setup
-1. Download pemission json file and save to ~/.gcp/default.pem, which is 
-   used by test code.
+1. Download pemission json file and save it to 
+   ~/.config/gcloud/application_default_credentials.json, see 
+   https://godoc.org/golang.org/x/oauth2/google#DefaultTokenSource
 2. Create project, dataset and storage bucket, set in bqclient_test.go.
 
 ## implementation

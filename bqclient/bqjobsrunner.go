@@ -11,7 +11,7 @@ import (
 // RunJobsInFolder scan jobs file in a folder and run them sequentially.
 // Files are sorted by filename.
 // Subdirectories are not scanned.
-func (c *bqclient) RunJobsInFolder(dirname string) error {
+func (c *BQClient) RunJobsInFolder(dirname string) error {
 	files, err := ioutil.ReadDir(dirname)
 	if err != nil {
 		return fmt.Errorf("failed to read dir %v: %v", dirname, err)

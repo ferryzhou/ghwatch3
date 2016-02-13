@@ -17,7 +17,7 @@ type jobConfig struct {
 }
 
 // parseJobFile generate a bigQuery job by parsing a yaml file.
-func (c *bqclient) JobFromFile(file string) (*bigquery.Job, error) {
+func (c *BQClient) JobFromFile(file string) (*bigquery.Job, error) {
 	data, err := ioutil.ReadFile(file)
 	if err != nil {
 		return nil, fmt.Errorf("failed to read file %v: %v", file, err)

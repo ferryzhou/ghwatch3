@@ -16,11 +16,11 @@ const (
 	bqEndpoint = "https://www.googleapis.com/auth/bigquery"
 )
 
-type bqclient struct {
+type BQClient struct {
 	service *bigquery.Service
 
-	projectId string
-	datasetId string
+	ProjectId string
+	DatasetId string
 
 	JobStatusPollingInterval time.Duration
 	JobStatusPollingMaxTries int
@@ -37,8 +37,8 @@ func getBigqueryService() (*bigquery.Service, error) {
 	return bigquery.New(client)
 }
 
-func NewBQClient() (*bqclient, error) {
-	c := &bqclient{
+func NewBQClient() (*BQClient, error) {
+	c := &BQClient{
 		JobStatusPollingMaxTries: 40,
 		JobStatusPollingInterval: 5 * time.Second,
 	}
@@ -50,15 +50,15 @@ func NewBQClient() (*bqclient, error) {
 	return c, nil
 }
 
-func (c *bqclient) JobQuery(query, dstTable string) *bigquery.Job {
+func (c *BQClient) JobQuery(query, dstTable string) *bigquery.Job {
 	dstTableRef := &bigquery.TableReference{
-		ProjectId: c.projectId,
-		DatasetId: c.datasetId,
+		ProjectId: c.ProjectId,
+		DatasetId: c.DatasetId,
 		TableId:   dstTable,
 	}
 	defaultDatasetRef := &bigquery.DatasetReference{
-		ProjectId: c.projectId,
-		DatasetId: c.datasetId,
+		ProjectId: c.ProjectId,
+		DatasetId: c.DatasetId,
 	}
 	qConf := &bigquery.JobConfigurationQuery{
 		Query:             query,
@@ -77,10 +77,10 @@ func (c *bqclient) JobQuery(query, dstTable string) *bigquery.Job {
 	}
 }
 
-func (c *bqclient) JobExtract(table, gspath string) *bigquery.Job {
+func (c *BQClient) JobExtract(table, gspath string) *bigquery.Job {
 	tableRef := &bigquery.TableReference{
-		ProjectId: c.projectId,
-		DatasetId: c.datasetId,
+		ProjectId: c.ProjectId,
+		DatasetId: c.DatasetId,
 		TableId:   table,
 	}
 	extract := &bigquery.JobConfigurationExtract{
@@ -99,7 +99,7 @@ func (c *bqclient) JobExtract(table, gspath string) *bigquery.Job {
 }
 
 // run a series of jobs sequentially and synchronously
-func (c *bqclient) RunSequentialJobs(jobs []*bigquery.Job) error {
+func (c *BQClient) RunSequentialJobs(jobs []*bigquery.Job) error {
 	for _, job := range jobs {
 		if err := c.RunJob(job); err != nil {
 			return err
@@ -109,8 +109,8 @@ func (c *bqclient) RunSequentialJobs(jobs []*bigquery.Job) error {
 }
 
 // RunJob runs a bq Job synchronously.
-func (c *bqclient) RunJob(job *bigquery.Job) error {
-	job, err := c.service.Jobs.Insert(c.projectId, job).Do()
+func (c *BQClient) RunJob(job *bigquery.Job) error {
+	job, err := c.service.Jobs.Insert(c.ProjectId, job).Do()
 	if err != nil {
 		return fmt.Errorf("failed to insert job: %v", err)
 	}
@@ -119,7 +119,7 @@ func (c *bqclient) RunJob(job *bigquery.Job) error {
 	log.Printf("[Job %s] start polling ....", jobId)
 	for i := 0; i < c.JobStatusPollingMaxTries; i++ {
 		time.Sleep(c.JobStatusPollingInterval)
-		j, err := c.service.Jobs.Get(c.projectId, jobId).Do()
+		j, err := c.service.Jobs.Get(c.ProjectId, jobId).Do()
 		if err != nil {
 			log.Printf("[Job %s] failed to get job status: %v\n", jobId, err)
 			continue

@@ -26,7 +26,8 @@ func newClient() *bq.BQClient {
 }
 
 func main() {
-	fmt.Printf("job dir: %v", *jobsDir)
+	flag.Parse()
+	fmt.Printf("job dir: %v\n", *jobsDir)
 	c := newClient()
 	if err := c.RunJobsInFolder(*jobsDir); err != nil {
 		log.Panicf("failed to run jobs: %v", err)

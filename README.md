@@ -20,3 +20,9 @@ idea: download data from bigquery github table, analyze the data
 	name, owner, created_at, watchers, language, discription, ...
 1. repo_recs.csv
     shortPath, shortPath, score
+
+# Developer Guide
+
+gcloud golang api examples:
+
+https://github.com/google/google-api-go-client/tree/master/examples

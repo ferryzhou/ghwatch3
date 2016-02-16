@@ -17,10 +17,10 @@ import (
 
 // This name is used in sql specified in jobs/ folder.
 const bucket = "ghwatch3"
+const dataset = "ghwatch3"
 
 var (
 	project = flag.String("project", "", "bigquery project id")
-	dataset = flag.String("dataset", "", "dest bigquery dataset name")
 	jobsDir = flag.String("jobs_dir", "", "a folder containing job files")
 )
 
@@ -30,7 +30,7 @@ func newBQClient() *bq.BQClient {
 		log.Panicf("failed to start client: %v", err)
 	}
 	c.ProjectId = *project
-	c.DatasetId = *dataset
+	c.DatasetId = dataset
 	return c
 }
 

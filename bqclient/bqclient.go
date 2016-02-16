@@ -39,7 +39,7 @@ func getBigqueryService() (*bigquery.Service, error) {
 
 func NewBQClient() (*BQClient, error) {
 	c := &BQClient{
-		JobStatusPollingMaxTries: 40,
+		JobStatusPollingMaxTries: 400,
 		JobStatusPollingInterval: 5 * time.Second,
 	}
 	service, err := getBigqueryService()

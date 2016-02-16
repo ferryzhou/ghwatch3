@@ -1,3 +1,4 @@
+// Program show_gstoreage downloads a file from google cloud storage.
 package main
 
 import (
@@ -28,6 +29,13 @@ func main() {
 	}
 	service, err := storage.New(client)
 
+	objs, err := service.Objects.List(*bucket).Do()
+	if err != nil {
+		log.Fatalf("failed to list %v: %v", *bucket, err)
+	}
+	for _, item := range objs.Items {
+		log.Printf("%v, %v, %v", item.Id, item.Name, item.SelfLink)
+	}
 	resp, err := service.Objects.Get(*bucket, *filename).Download()
 	if err != nil {
 		log.Fatalf("failed to get file %q %q: %v", *bucket, *filename, err)

@@ -110,6 +110,7 @@ func (c *BQClient) RunSequentialJobs(jobs []*bigquery.Job) error {
 
 // RunJob runs a bq Job synchronously.
 func (c *BQClient) RunJob(job *bigquery.Job) error {
+	log.Printf("Run job %v", job)
 	job, err := c.service.Jobs.Insert(c.ProjectId, job).Do()
 	if err != nil {
 		return fmt.Errorf("failed to insert job: %v", err)

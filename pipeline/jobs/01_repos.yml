@@ -3,7 +3,7 @@ command: query
 table: repos
 
 query: >
-SELECT
+  SELECT
   repository_name,
   repository_owner,
   repository_organization,
@@ -13,10 +13,10 @@ SELECT
   repository_description,
   MAX(repository_watchers) AS watchers,
   MAX(repository_pushed_at) pushed_at,
-FROM
+  FROM
   [githubarchive:github.timeline]
-WHERE
+  WHERE
   repository_watchers > 1
-GROUP EACH BY 1, 2, 3, 4, 5, 6, 7
-ORDER BY
+  GROUP EACH BY 1, 2, 3, 4, 5, 6, 7
+  ORDER BY
   watchers DESC;

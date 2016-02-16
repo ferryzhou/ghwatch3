@@ -1,0 +1,13 @@
+command: query
+
+table: repos_100
+
+query: >
+  SELECT * FROM (
+    SELECT repository_url, COUNT(1) AS c
+      FROM [githubarchive:github.timeline]
+        WHERE type="WatchEvent"
+          GROUP BY 1 
+  )
+  WHERE c > 100
+  ORDER BY 2 DESC;

@@ -11,11 +11,11 @@ func TestJobsRunner(t *testing.T) {
 		wantErr bool
 	}{
 		{
-			"testdata/goodjobs01",
+			"testdata/goodjobs01/*.yml",
 			false,
 		},
 		{
-			"testdata/badjobs01",
+			"testdata/badjobs01/*.yml",
 			true,
 		},
 	}

@@ -8,6 +8,7 @@ import (
 	"flag"
 	"fmt"
 	"log"
+	"os"
 
 	"golang.org/x/net/context"
 
@@ -22,6 +23,7 @@ const dataset = "ghwatch3"
 var (
 	project = flag.String("project", "", "bigquery project id")
 	jobsDir = flag.String("jobs_dir", "", "a folder containing job files")
+	dstDir  = flag.String("dst_dir", ".", "destination folder storing the result files")
 )
 
 func newBQClient() *bq.BQClient {
@@ -39,11 +41,14 @@ func main() {
 	fmt.Printf("job dir: %v\n", *jobsDir)
 	c := newBQClient()
 	if err := c.RunJobsInFolder(*jobsDir); err != nil {
-		log.Panicf("failed to run jobs: %v", err)
+		log.Panicf("Failed to run jobs: %v", err)
 	}
 	ctx := context.Background()
-	if err := gs.DownloadBucket(ctx, bucket, "."); err != nil {
-		log.Panicf("failed to download bucket %v: %v", bucket, err)
+	if err := os.MkdirAll(*dstDir, 0777); err != nil {
+		log.Panicf("Failed to create dst dir %v: %v", *dstDir, err)
+	}
+	if err := gs.DownloadBucket(ctx, bucket, *dstDir); err != nil {
+		log.Panicf("Failed to download bucket %v: %v", bucket, err)
 	}
 	fmt.Printf("Success")
 }

@@ -28,7 +28,7 @@ func DownloadBucket(ctx context.Context, bucket, localDir string) error {
 		return fmt.Errorf("failed to list %v: %v", bucket, err)
 	}
 	for _, item := range objs.Items {
-		fmt.Println("%v", item.Name)
+		fmt.Printf("%v\n", item.Name)
 		downloadFile(service, bucket, item.Name, localDir)
 	}
 	return nil

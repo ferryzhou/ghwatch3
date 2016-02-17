@@ -1,3 +1,5 @@
 *.pem
 *.swp
 .DS_Store
+*.gzip
+

@@ -2,8 +2,7 @@ package bqclient
 
 import (
 	"fmt"
-	"io/ioutil"
-	"path"
+	"path/filepath"
 
 	"google.golang.org/api/bigquery/v2"
 )
@@ -11,17 +10,14 @@ import (
 // RunJobsInFolder scan jobs file in a folder and run them sequentially.
 // Files are sorted by filename.
 // Subdirectories are not scanned.
-func (c *BQClient) RunJobsInFolder(dirname string) error {
-	files, err := ioutil.ReadDir(dirname)
+func (c *BQClient) RunJobsInFolder(pattern string) error {
+	files, err := filepath.Glob(pattern)
 	if err != nil {
-		return fmt.Errorf("failed to read dir %v: %v", dirname, err)
+		return fmt.Errorf("failed to read dir %v: %v", pattern, err)
 	}
 	var jobs []*bigquery.Job
 	for _, file := range files {
-		if file.IsDir() {
-			continue
-		}
-		job, err := c.JobFromFile(path.Join(dirname, file.Name()))
+		job, err := c.JobFromFile(file)
 		if err != nil {
 			return fmt.Errorf("failed to read file: %v", err)
 		}

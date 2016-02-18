@@ -2,6 +2,8 @@
 // BQ jobs are configured in jobs/ folder.
 // Jobs are executed sequentially.
 // All files in cloud storage in specified bucket are downloaded to local after all jobs finished.
+// Example:
+//   go run pipeline.go --jobs_path=jobs/01_*.yml  --project=950350008903 --dst_dir=results
 package main
 
 import (
@@ -21,9 +23,9 @@ const bucket = "ghwatch3"
 const dataset = "ghwatch3"
 
 var (
-	project = flag.String("project", "", "bigquery project id")
-	jobsDir = flag.String("jobs_dir", "", "a folder containing job files")
-	dstDir  = flag.String("dst_dir", ".", "destination folder storing the result files")
+	project  = flag.String("project", "", "bigquery project id")
+	jobsPath = flag.String("jobs_path", "", "job files pattern, e.g. jobs/*.yml")
+	dstDir   = flag.String("dst_dir", ".", "destination folder storing the result files")
 )
 
 func newBQClient() *bq.BQClient {
@@ -38,9 +40,9 @@ func newBQClient() *bq.BQClient {
 
 func main() {
 	flag.Parse()
-	fmt.Printf("job dir: %v\n", *jobsDir)
+	fmt.Printf("job dir: %v\n", *jobsPath)
 	c := newBQClient()
-	if err := c.RunJobsInFolder(*jobsDir); err != nil {
+	if err := c.RunJobsInFolder(*jobsPath); err != nil {
 		log.Panicf("Failed to run jobs: %v", err)
 	}
 	ctx := context.Background()

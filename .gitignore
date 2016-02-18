@@ -2,4 +2,4 @@
 *.swp
 .DS_Store
 *.gzip
-
+results/

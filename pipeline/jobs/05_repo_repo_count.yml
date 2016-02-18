@@ -12,4 +12,4 @@ query: >
     RIGHT JOIN EACH [ghwatch3.repo_actor_createdat_100] b
     ON a.actor = b.actor
     GROUP EACH BY 1, 2 )
-  WHERE c > 10;
+  WHERE c > 10 LIMIT 10000;

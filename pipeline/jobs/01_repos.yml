@@ -11,12 +11,13 @@ query: >
   repository_url,
   repository_created_at,
   repository_description,
+  repository_homepage,
   MAX(repository_watchers) AS watchers,
   MAX(repository_pushed_at) pushed_at,
   FROM
   [githubarchive:github.timeline]
   WHERE
   repository_watchers > 1
-  GROUP EACH BY 1, 2, 3, 4, 5, 6, 7
+  GROUP EACH BY 1, 2, 3, 4, 5, 6, 7, 8
   ORDER BY
   watchers DESC;

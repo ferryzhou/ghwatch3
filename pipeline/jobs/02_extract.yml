@@ -2,4 +2,4 @@ command: extract
 
 table: repos
 
-gspath: gs://ghwatch3/repos.gzip 
+gspath: gs://ghwatch3/repos.csv.gz 

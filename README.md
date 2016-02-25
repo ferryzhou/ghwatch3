@@ -13,6 +13,12 @@ idea: download data from bigquery github table, analyze the data
 ## Test Setup
 1. Create project, dataset and storage bucket, set in bqclient_test.go.
 
+## Operations
+1. Download data
+```
+go run pipeline.go --jobs_path=jobs/*.yml  --project=950350008903 --dst_dir=results
+```
+
 ## implementation
 1. download gzip csv from bigquery. 
 1. load data into memory

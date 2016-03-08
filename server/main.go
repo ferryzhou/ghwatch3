@@ -33,6 +33,7 @@ func main() {
 	router.HandleFunc("/repos", RepoIndex)
 	router.HandleFunc("/repos/{owner}", OwnerShow)
 	router.HandleFunc("/repos/{owner}/{repo}", RepoShow)
+	router.HandleFunc("/recs/{owner}/{repo}", RepoRec)
 	log.Fatal(http.ListenAndServe(":8080", router))
 }
 
@@ -49,6 +50,15 @@ func RepoShow(w http.ResponseWriter, r *http.Request) {
 	fmt.Fprintln(w, "Repo show:", vars["owner"], "/", vars["repo"])
 	sp := vars["owner"] + "/" + vars["repo"]
 	rp := s.RepoByShortPath(sp)
+	if err := json.NewEncoder(w).Encode(rp); err != nil {
+		log.Printf("encode error %v: %v", rp, err)
+	}
+}
+
+func RepoRec(w http.ResponseWriter, r *http.Request) {
+	vars := mux.Vars(r)
+	sp := vars["owner"] + "/" + vars["repo"]
+	rp := s.SimilarRepos(sp)
 	if err := json.NewEncoder(w).Encode(rp); err != nil {
 		log.Printf("encode error %v: %v", rp, err)
 	}

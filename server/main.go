@@ -2,6 +2,7 @@ package main
 
 import (
 	"encoding/json"
+	"flag"
 	"fmt"
 	"log"
 	"net/http"
@@ -10,14 +11,20 @@ import (
 	"github.com/gorilla/mux"
 )
 
-var s models.RepoStore
+var (
+	s               models.RepoStore
+	reposPath       = flag.String("repos_path", "", "repos csv gzip file path")
+	recsPathPattern = flag.String("recs_path_pattern", "", "recs csv gzip path pattern")
+)
 
 func main() {
-	repoCSV := "../models/testdata/repos.csv"
-	recCSV := ""
-	ss, err := models.InMemRepoStoreFromCSV(repoCSV, recCSV)
-	if err != nil {
-		log.Fatalf("InMemRepoStoreFromCSV(%q, %q) failed: %v", repoCSV, recCSV, err)
+	flag.Parse()
+	ss := models.NewInMemRepoStore()
+	if err := ss.LoadReposFromCSVGZip(*reposPath); err != nil {
+		log.Fatalf("LoadReposFromCSVGZip(%q) failed: %v", *reposPath, err)
+	}
+	if err := ss.LoadRecsFromCSVGZipFiles(*recsPathPattern); err != nil {
+		log.Fatalf("LoadRecsFromCSVGZip(%q) failed: %v", *recsPathPattern, err)
 	}
 	s = ss
 	log.Printf("Repo store is ready")

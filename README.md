@@ -18,6 +18,10 @@ idea: download data from bigquery github table, analyze the data
 ```
 go run pipeline.go --jobs_path=jobs/*.yml  --project=950350008903 --dst_dir=results
 ```
+1. Start Server
+```
+go run main.go -repos_path="../pipeline/results/repos.gzip" -recs_path_pattern="../pipeline/results/repo_repo_*.gzip"
+```
 
 ## implementation
 1. download gzip csv from bigquery. 

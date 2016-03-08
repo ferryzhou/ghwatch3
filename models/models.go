@@ -8,6 +8,7 @@ import (
 	"io"
 	"log"
 	"os"
+	"path/filepath"
 	"sort"
 	"strconv"
 	"strings"
@@ -140,6 +141,18 @@ func (s *InMemRepoStore) LoadRecsFromCSVGZip(path string) error {
 
 	r := csv.NewReader(bufio.NewReader(ar))
 	return RecsFromCSVReader(r, s.recs)
+}
+func (s *InMemRepoStore) LoadRecsFromCSVGZipFiles(pattern string) error {
+	files, err := filepath.Glob(pattern)
+	if err != nil {
+		return fmt.Errorf("failed to read dir %v: %v", pattern, err)
+	}
+	for _, file := range files {
+		if err = s.LoadRecsFromCSVGZip(file); err != nil {
+			return err
+		}
+	}
+	return nil
 }
 
 // InMemRepoStoreFromCSV creates a repo store from raw csv files

@@ -1,6 +1,6 @@
 command: query
 
-table: repo_actor_createdat_100
+table: repo_actor_createdat_c1000
 
 query: >
   SELECT
@@ -8,7 +8,7 @@ query: >
     actor,
     created_at
   FROM [githubarchive:github.timeline] a
-  RIGHT JOIN EACH [ghwatch3.repos_100] b
+  RIGHT JOIN EACH [ghwatch3.repos_c1000] b
   ON a.repository_url = b.repository_url
   WHERE type = "WatchEvent"
   GROUP EACH BY 1, 2, 3 ;

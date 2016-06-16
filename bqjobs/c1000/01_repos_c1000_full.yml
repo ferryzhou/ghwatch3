@@ -1,0 +1,23 @@
+command: query
+
+table: repos_c1000_full
+
+query: >
+  SELECT
+  repository_name as name,
+  repository_owner as owner,
+  repository_organization as org,
+  repository_language as lang,
+  repository_url as url,
+  repository_created_at as created_at,
+  repository_description as description,
+  repository_homepage as homepage,
+  MAX(repository_watchers) AS watchers,
+  MAX(repository_pushed_at) pushed_at,
+  FROM
+  [githubarchive:github.timeline]
+  WHERE
+  repository_watchers > 1000
+  GROUP EACH BY 1, 2, 3, 4, 5, 6, 7, 8
+  ORDER BY
+  watchers DESC;

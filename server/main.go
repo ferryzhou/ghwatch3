@@ -15,19 +15,40 @@ var (
 	s               models.RepoStore
 	reposPath       = flag.String("repos_path", "", "repos csv gzip file path")
 	recsPathPattern = flag.String("recs_path_pattern", "", "recs csv gzip path pattern")
+	fromGobPath     = flag.String("from_gob_path", "", "in mem store gob data as input, if specified, load data from here instead from csv")
+	toGobPath       = flag.String("to_gob_path", "", "in mem store gob data as output")
 )
 
+func initStore() {
+	ms := &models.InMemRepoStore{}
+	if *fromGobPath != "" {
+		if err := ms.Load(*fromGobPath); err != nil {
+			log.Fatalf("failed to load: %v", err)
+		}
+	} else {
+		ms := models.NewInMemRepoStore()
+		if err := ms.LoadReposFromCSVGZip(*reposPath); err != nil {
+			log.Fatalf("LoadReposFromCSVGZip(%q) failed: %v", *reposPath, err)
+		}
+		if err := ms.LoadRecsFromCSVGZipFiles(*recsPathPattern); err != nil {
+			log.Fatalf("LoadRecsFromCSVGZip(%q) failed: %v", *recsPathPattern, err)
+		}
+		ms.GenReposByOwner()
+	}
+
+	s = ms
+	log.Printf("Repo store is ready")
+
+	if *toGobPath != "" {
+		log.Printf("Writing to gob file %v", *toGobPath)
+		if err := ms.Save(*toGobPath); err != nil {
+			log.Fatalf("Failed to save: %v", err)
+		}
+	}
+}
 func main() {
 	flag.Parse()
-	ss := models.NewInMemRepoStore()
-	if err := ss.LoadReposFromCSVGZip(*reposPath); err != nil {
-		log.Fatalf("LoadReposFromCSVGZip(%q) failed: %v", *reposPath, err)
-	}
-	if err := ss.LoadRecsFromCSVGZipFiles(*recsPathPattern); err != nil {
-		log.Fatalf("LoadRecsFromCSVGZip(%q) failed: %v", *recsPathPattern, err)
-	}
-	s = ss
-	log.Printf("Repo store is ready")
+	initStore()
 	router := mux.NewRouter().StrictSlash(true)
 	router.HandleFunc("/", Index)
 	router.HandleFunc("/repos", RepoIndex)
@@ -66,5 +87,8 @@ func RepoRec(w http.ResponseWriter, r *http.Request) {
 
 func OwnerShow(w http.ResponseWriter, r *http.Request) {
 	vars := mux.Vars(r)
-	fmt.Fprintln(w, "Owner show:", vars["owner"])
+	rp := s.ReposByOwner(vars["owner"])
+	if err := json.NewEncoder(w).Encode(rp); err != nil {
+		log.Printf("encode error %v: %v", rp, err)
+	}
 }

@@ -1,0 +1,27 @@
+<repo>
+
+  <div class="panel panel-default">
+    <div class="panel-heading">{ opts.owner }/{ opts.repo_name }</div>
+    <div class="panel-body">
+      { repo.description }
+    </div>
+  </div>
+
+  <script>
+    // http://postgrest.com/api/reading/
+    var self = this
+    var url = 'http://localhost:3000/repos?url=like.*' + this.opts.owner + '/' + this.opts.repo_name
+    $.ajax({
+      url: url,
+      type: "GET",
+      beforeSend: function(xhr) {
+        xhr.setRequestHeader('Range', '0-10');
+      },
+      success: function(data) {
+        console.log(data)
+        self.repo = data[0]
+        self.update()
+      }
+    });
+  </script>
+</repo>

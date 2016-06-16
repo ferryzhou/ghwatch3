@@ -2,4 +2,8 @@
 *.swp
 .DS_Store
 *.gzip
+*.gob
+*.gz
 results/
+processed/
+bqrun

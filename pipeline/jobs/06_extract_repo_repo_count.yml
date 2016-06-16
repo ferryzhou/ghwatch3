@@ -1,5 +1,0 @@
-command: extract
-
-table: repo_repo_count_100
-
-gspath: gs://ghwatch3/repo_repo_count_100_*.csv.gz 

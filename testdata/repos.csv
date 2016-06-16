@@ -1,0 +1,200 @@
+name,owner,organization,lang,url,created_at,description,stars,pushed_at
+bootstrap,twbs,twbs,CSS,https://github.com/twbs/bootstrap,2011-07-29 21:19:00,"The most popular HTML, CSS, and JavaScript framework for developing responsive, mobile first projects on the web.",76106,2015-01-01 03:01:41
+bootstrap,twbs,twbs,CSS,https://github.com/twbs/bootstrap,2011-07-29 21:19:00,"The most popular front-end framework for developing responsive, mobile first projects on the web.",72391,2014-09-27 01:20:59
+bootstrap,twbs,twbs,CSS,https://github.com/twbs/bootstrap,2011-07-29 21:19:00,"Sleek, intuitive, and powerful front-end framework for faster and easier web development.",65171,2014-03-02 07:50:26
+bootstrap,twbs,twbs,JavaScript,https://github.com/twbs/bootstrap,2011-07-29 21:19:00,"Sleek, intuitive, and powerful front-end framework for faster and easier web development.",63312,2014-01-18 22:29:11
+bootstrap,twitter,twitter,JavaScript,https://github.com/twitter/bootstrap,2011-07-29 21:19:00,"Sleek, intuitive, and powerful front-end framework for faster and easier web development.",53678,2013-07-27 07:47:24
+bootstrap,,twitter,JavaScript,https://github.com//bootstrap,2011-07-29 21:19:00,"Sleek, intuitive, and powerful front-end framework for faster and easier web development.",50197,2013-05-17 17:29:12
+bootstrap,twitter,twitter,JavaScript,https://github.com/twitter/bootstrap,2011-07-29 21:19:00,"HTML, CSS, and JS toolkit from Twitter",38195,2012-10-03 00:01:25
+node,joyent,joyent,JavaScript,https://github.com/joyent/node,2009-05-27 16:29:46,evented I/O for v8 javascript,33984,2014-12-31 21:16:33
+angular.js,angular,angular,JavaScript,https://github.com/angular/angular.js,2010-01-06 00:34:37,HTML enhanced for web apps,33608,2014-12-31 14:09:50
+d3,mbostock,,JavaScript,https://github.com/mbostock/d3,2010-09-27 17:22:42,A JavaScript visualization library for HTML and SVG.,33034,2014-12-30 17:06:00
+jquery,jquery,jquery,JavaScript,https://github.com/jquery/jquery,2009-04-03 15:20:14,jQuery JavaScript Library,32966,2014-12-31 14:44:36
+free-programming-books,vhf,,,https://github.com/vhf/free-programming-books,2013-10-11 06:50:37,,32689,2015-01-01 10:36:43
+Font-Awesome,FortAwesome,FortAwesome,CSS,https://github.com/FortAwesome/Font-Awesome,2012-02-17 14:19:43,The iconic font and CSS toolkit,29278,2014-12-28 14:27:12
+html5-boilerplate,h5bp,h5bp,JavaScript,https://github.com/h5bp/html5-boilerplate,2010-01-24 18:03:24,"A professional front-end template for building fast, robust, and adaptable web apps or sites.",27846,2014-12-23 06:50:18
+html5-boilerplate,h5bp,h5bp,CSS,https://github.com/h5bp/html5-boilerplate,2010-01-24 18:03:24,"A professional front-end template for building fast, robust, and adaptable web apps or sites.",26237,2014-08-04 15:58:18
+rails,rails,rails,Ruby,https://github.com/rails/rails,2008-04-11 02:19:47,Ruby on Rails,24459,2015-01-01 17:57:53
+Font-Awesome,FortAwesome,FortAwesome,CSS,https://github.com/FortAwesome/Font-Awesome,2012-02-17 14:19:43,The iconic font and CSS framework,24134,2014-05-28 09:14:05
+Font-Awesome,FortAwesome,FortAwesome,CSS,https://github.com/FortAwesome/Font-Awesome,2012-02-17 14:19:43,The iconic font designed for Bootstrap,23403,2014-05-22 11:06:28
+impress.js,bartaz,,JavaScript,https://github.com/bartaz/impress.js,2011-12-28 22:23:19,It's a presentation framework based on the power of CSS3 transforms and transitions in modern browsers and inspired by the idea behind prezi.com.,22753,2014-10-01 07:40:18
+angular.js,angular,angular,JavaScript,https://github.com/angular/angular.js,2010-01-06 00:34:37,,22691,2014-04-15 16:29:11
+meteor,meteor,meteor,JavaScript,https://github.com/meteor/meteor,2012-01-19 01:58:17,"Meteor, an ultra-simple, database-everywhere, data-on-the-wire, pure-Javascript web framework.",21579,2014-12-30 20:15:16
+jquery,,jquery,JavaScript,https://github.com//jquery,2009-04-03 15:20:14,jQuery JavaScript Library,21433,2013-06-19 23:18:39
+node,,joyent,JavaScript,https://github.com//node,2009-05-27 16:29:46,evented I/O for v8 javascript,21015,2013-03-23 18:33:16
+homebrew,Homebrew,Homebrew,Ruby,https://github.com/Homebrew/homebrew,2009-05-20 19:38:37,The missing package manager for OS X.,20803,2015-01-01 16:49:48
+oh-my-zsh,robbyrussell,,Shell,https://github.com/robbyrussell/oh-my-zsh,2009-08-28 18:15:37,"A community-driven framework for managing your zsh configuration. Includes 120+ optional plugins (rails, git, OSX, hub, capistrano, brew, ant, macports, etc), over 120 themes to spice up your morning, and an auto-update tool so that makes it easy to keep up with the latest updates from the community.",20625,2014-12-20 20:41:26
+gitignore,github,github,,https://github.com/github/gitignore,2010-11-08 20:17:14,A collection of useful .gitignore templates,20578,2014-12-23 10:01:34
+brackets,adobe,adobe,JavaScript,https://github.com/adobe/brackets,2011-12-07 21:14:40,"An open source code editor for the web, written in JavaScript, HTML and CSS.",20440,2015-01-01 17:05:36
+backbone,jashkenas,,JavaScript,https://github.com/jashkenas/backbone,2010-09-30 19:41:28,"Give your JS App some Backbone with Models, Views, Collections, and Events",20178,2014-12-15 17:15:33
+moment,moment,moment,JavaScript,https://github.com/moment/moment,2011-03-01 02:46:06,"Parse, validate, manipulate, and display dates in javascript.",19075,2014-12-31 16:42:16
+foundation,zurb,zurb,CSS,https://github.com/zurb/foundation,2011-10-13 23:05:42,The most advanced responsive front-end framework in the world. Quickly create prototypes and production code for sites and apps that work on any kind of device.,18993,2014-12-30 23:02:48
+rails,,rails,Ruby,https://github.com//rails,2008-04-11 02:19:47,Ruby on Rails,18671,2013-06-05 09:28:12
+jQuery-File-Upload,blueimp,,JavaScript,https://github.com/blueimp/jQuery-File-Upload,2010-12-01 15:35:32,"File Upload widget with multiple file selection, drag&amp;drop support, progress bar, validation and preview images, audio and video for jQuery. Supports cross-domain, chunked and resumable file uploads. Works with any server-side platform (Google App Engine, PHP, Python, Ruby on Rails, Java, etc.) that supports standard HTML form file uploads.",18591,2015-01-01 17:50:15
+reveal.js,hakimel,,JavaScript,https://github.com/hakimel/reveal.js,2011-06-07 18:54:22,The HTML Presentation Framework,18589,2014-12-18 17:33:31
+linux,torvalds,,C,https://github.com/torvalds/linux,2011-09-04 22:48:12,Linux kernel source tree,18379,2014-12-31 22:58:24
+animate.css,daneden,,CSS,https://github.com/daneden/animate.css,2011-10-12 10:07:38,A cross-browser library of CSS animations. As easy to use as an easy thing.,18292,2014-09-03 17:54:46
+node-webkit,rogerwang,,C++,https://github.com/rogerwang/node-webkit,2012-01-04 06:21:10,Call all Node.js modules directly from DOM and enable a new way of writing applications with all Web technologies.,18245,2014-12-30 14:02:57
+docker,docker,docker,Go,https://github.com/docker/docker,2013-01-18 18:10:57,Docker - the open-source application container engine,18057,2015-01-01 16:49:29
+jekyll,jekyll,jekyll,Ruby,https://github.com/jekyll/jekyll,2008-10-20 06:29:03,"Jekyll is a blog-aware, static site generator in Ruby",17917,2014-12-30 04:38:38
+three.js,mrdoob,,JavaScript,https://github.com/mrdoob/three.js,2010-03-23 18:58:01,JavaScript 3D library.,17666,2014-12-31 13:47:36
+meteor,meteor,meteor,JavaScript,https://github.com/meteor/meteor,2012-01-19 01:58:17,"To be counted in the 2014 Meteor Challenge (http://challenge.meteor.com), please click the ""Star"" button ^ in the upper-right corner of this page. Meteor is an ultra-simple, database-everywhere, data-on-the-wire, pure-Javascript web framework.",17130,2014-07-01 19:05:10
+express,strongloop,strongloop,JavaScript,https://github.com/strongloop/express,2009-06-26 18:56:01,"Fast, unopinionated, minimalist web framework for node.",16904,2014-12-16 05:20:19
+chosen,harvesthq,harvesthq,CoffeeScript,https://github.com/harvesthq/chosen,2011-04-18 15:07:41,"Chosen is a library for making long, unwieldy select boxes more friendly.",16787,2014-12-22 22:27:52
+Font-Awesome,FortAwesome,FortAwesome,Ruby,https://github.com/FortAwesome/Font-Awesome,2012-02-17 14:19:43,The iconic font designed for Bootstrap,16489,2013-07-19 15:10:19
+impress.js,,,JavaScript,https://github.com//impress.js,2011-12-28 22:23:19,It's a presentation framework based on the power of CSS3 transforms and transitions in modern browsers and inspired by the idea behind prezi.com.,16029,2013-06-03 16:28:39
+CosmosBrowserBackend,Rohfosho,,JavaScript,https://github.com/Rohfosho/CosmosBrowserBackend,2014-09-11 03:16:44,,15944,2014-11-04 14:04:17
+chosen,harvesthq,harvesthq,JavaScript,https://github.com/harvesthq/chosen,2011-04-18 15:07:41,"Chosen is a library for making long, unwieldy select boxes more friendly.",15788,2014-06-24 07:19:37
+express,strongloop,strongloop,JavaScript,https://github.com/strongloop/express,2009-06-26 18:56:01,"Sinatra inspired web development framework for node.js -- insanely fast, flexible, and simple",15782,2014-09-25 00:19:08
+foundation,zurb,zurb,JavaScript,https://github.com/zurb/foundation,2011-10-13 23:05:42,The most advanced responsive front-end framework in the world. Quickly create prototypes and production code for sites and apps that work on any kind of device.,15181,2013-12-24 01:10:38
+AFNetworking,AFNetworking,AFNetworking,Objective-C,https://github.com/AFNetworking/AFNetworking,2011-05-31 21:28:44,A delightful iOS and OS X networking framework,15106,2014-12-21 23:02:40
+d3,,,JavaScript,https://github.com//d3,2010-09-27 17:22:42,A JavaScript visualization library for HTML and SVG.,15062,2013-05-13 22:13:40
+homebrew,mxcl,,Ruby,https://github.com/mxcl/homebrew,2009-05-20 19:38:37,The missing package manager for OS X.,15027,2013-12-13 18:54:33
+express,visionmedia,,JavaScript,https://github.com/visionmedia/express,2009-06-26 18:56:01,"Sinatra inspired web development framework for node.js -- insanely fast, flexible, and simple",14948,2014-07-27 20:01:01
+normalize.css,necolas,,CSS,https://github.com/necolas/normalize.css,2011-05-04 10:20:25,A collection of HTML element and attribute style-normalizations,14872,2014-10-06 16:07:47
+backbone,documentcloud,documentcloud,JavaScript,https://github.com/documentcloud/backbone,2010-09-30 19:41:28,"Give your JS App some Backbone with Models, Views, Collections, and Events",14813,2013-07-06 12:01:46
+resume.github.com,resume,resume,JavaScript,https://github.com/resume/resume.github.com,2011-02-06 13:39:55,Resumes generated using the GitHub informations,14633,2013-12-06 17:40:59
+gitlabhq,gitlabhq,gitlabhq,Ruby,https://github.com/gitlabhq/gitlabhq,2011-10-02 16:25:27,Open source software to collaborate on code. Follow us on twitter @gitlabhq,14558,2014-12-30 22:57:08
+Font-Awesome,,FortAwesome,Ruby,https://github.com//Font-Awesome,2012-02-17 14:19:43,The iconic font designed for Bootstrap,14547,2013-06-04 19:37:27
+socket.io,Automattic,Automattic,JavaScript,https://github.com/Automattic/socket.io,2010-03-11 18:24:48,Realtime application framework (Node.JS server),14484,2014-12-08 09:20:30
+html5-boilerplate,h5bp,h5bp,JavaScript,https://github.com/h5bp/html5-boilerplate,2010-01-24 18:03:24,"A professional front-end template that helps you build fast, robust, adaptable, and future-proof websites.",14364,2012-08-10 11:29:58
+backbone,,documentcloud,JavaScript,https://github.com//backbone,2010-09-30 19:41:28,"Give your JS App some Backbone with Models, Views, Collections, and Events",14107,2013-05-08 05:33:38
+Font-Awesome,FortAwesome,FortAwesome,JavaScript,https://github.com/FortAwesome/Font-Awesome,2012-02-17 14:19:43,The iconic font designed for Bootstrap,14035,2013-05-11 02:34:33
+meteor,meteor,meteor,JavaScript,https://github.com/meteor/meteor,2012-01-19 01:58:17,"To be counted with the 2014 Meteor Challenge (http://challenge.meteor.com), please click the ""Star"" button ^ in the upper-right corner of this page. Meteor is an ultra-simple, database-everywhere, data-on-the-wire, pure-Javascript web framework.",14029,2014-06-25 02:22:21
+meteor,meteor,meteor,JavaScript,https://github.com/meteor/meteor,2012-01-19 01:58:17,"To be counted as part of the 2014 Meteor Challenge (challenge.meteor.com), please click the ""Star"" button ^ in the upper-right corner of this page. Meteor is an ultra-simple, database-everywhere, data-on-the-wire, pure-Javascript web framework.",14018,2014-06-25 01:26:29
+Font-Awesome,,FortAwesome,JavaScript,https://github.com//Font-Awesome,2012-02-17 14:19:43,The iconic font designed for Bootstrap,14008,2013-05-11 02:34:33
+Modernizr,Modernizr,Modernizr,JavaScript,https://github.com/Modernizr/Modernizr,2009-09-25 20:13:23,Modernizr is a JavaScript library that detects HTML5 and CSS3 features in the user���s browser.,14007,2015-01-01 03:36:07
+meteor,meteor,meteor,JavaScript,https://github.com/meteor/meteor,2012-01-19 01:58:17,"To be counted as part of the Meteor Challenge (challenge.meteor.com), please click the ""Star"" button ^ in the upper-right corner of this page. Meteor is an ultra-simple, database-everywhere, data-on-the-wire, pure-Javascript web framework.",13898,2014-06-24 21:28:27
+meteor,meteor,meteor,JavaScript,https://github.com/meteor/meteor,2012-01-19 01:58:17,"Welcome! If you came here via the Meteor Challenge (challenge.meteor.com), please click the ""Star"" button ^ in the upper-right corner of this page to be counted. Meteor is an ultra-simple, database-everywhere, data-on-the-wire, pure-Javascript web framework.",13897,2014-06-24 21:28:27
+meteor,meteor,meteor,JavaScript,https://github.com/meteor/meteor,2012-01-19 01:58:17,"Welcome! If you came here via the Meteor Challenge (challenge.meteor.com), click the ""Star"" button in the upper-right corner of this page to be counted. Meteor is an ultra-simple, database-everywhere, data-on-the-wire, pure-Javascript web framework.",13889,2014-06-24 21:28:27
+meteor,meteor,meteor,JavaScript,https://github.com/meteor/meteor,2012-01-19 01:58:17,"Welcome! If you came here via the Meteor Challenge (challenge.meteor.com), click the ""Star"" button in the upper-right corner of this page to be counted. Meteor, an ultra-simple, database-everywhere, data-on-the-wire, pure-Javascript web framework.",13888,2014-06-24 21:28:27
+meteor,meteor,meteor,JavaScript,https://github.com/meteor/meteor,2012-01-19 01:58:17,"Welcome! If you came here via the [Meteor Challenge](challenge.meteor.com), click the star button in the upper-right corner of this page to be counted. Meteor, an ultra-simple, database-everywhere, data-on-the-wire, pure-Javascript web framework.",13887,2014-06-24 21:28:27
+meteor,meteor,meteor,JavaScript,https://github.com/meteor/meteor,2012-01-19 01:58:17,"**Welcome! If you came here via the Meteor Challenge, click the star button in the upper-right corner of this page to be counted.** Meteor, an ultra-simple, database-everywhere, data-on-the-wire, pure-Javascript web framework.",13885,2014-06-24 21:28:27
+docker,dotcloud,dotcloud,Go,https://github.com/dotcloud/docker,2013-01-18 18:10:57,Docker - the open-source application container engine,13845,2014-07-24 18:42:16
+Semantic-UI,Semantic-Org,Semantic-Org,JavaScript,https://github.com/Semantic-Org/Semantic-UI,2013-04-08 23:32:04,Semantic is a UI component framework based around useful principles from natural language.,13757,2014-12-30 22:16:44
+laravel,laravel,laravel,PHP,https://github.com/laravel/laravel,2011-06-08 03:06:08,A PHP Framework For Web Artisans,13724,2014-12-30 22:53:08
+Semantic-UI,Semantic-Org,Semantic-Org,CSS,https://github.com/Semantic-Org/Semantic-UI,2013-04-08 23:32:04,Semantic is a UI component framework based around useful principles from natural language.,13710,2014-12-30 22:05:49
+Font-Awesome,FortAwesome,FortAwesome,JavaScript,https://github.com/FortAwesome/Font-Awesome,2012-02-17 14:19:43,The iconic font designed for use with Twitter Bootstrap,13677,2013-05-10 16:00:30
+Font-Awesome,,FortAwesome,JavaScript,https://github.com//Font-Awesome,2012-02-17 14:19:43,The iconic font designed for use with Twitter Bootstrap,13675,2013-05-10 12:35:07
+frontend-dev-bookmarks,dypsilon,,,https://github.com/dypsilon/frontend-dev-bookmarks,2013-06-22 13:23:55,A huge list of frontend development resources I collected over time. Sorted from general knowledge at the top to concrete problems at the bottom.,13616,2014-07-14 05:15:15
+Ghost,TryGhost,TryGhost,JavaScript,https://github.com/TryGhost/Ghost,2013-05-04 11:09:13,Just a blogging platform,13490,2015-01-01 16:34:42
+gitlabhq,gitlabhq,gitlabhq,Ruby,https://github.com/gitlabhq/gitlabhq,2011-10-02 16:25:27,Project management and code hosting application. Follow us on twitter @gitlabhq,13301,2014-06-16 06:21:47
+jekyll,mojombo,,Ruby,https://github.com/mojombo/jekyll,2008-10-20 06:29:03,"Jekyll is a blog-aware, static site generator in Ruby",13229,2013-12-11 22:14:52
+underscore,jashkenas,,JavaScript,https://github.com/jashkenas/underscore,2009-10-25 18:31:06,JavaScript's utility _ belt,13202,2014-12-29 23:38:01
+discourse,discourse,discourse,Ruby,https://github.com/discourse/discourse,2013-01-12 00:25:55,"A platform for community discussion. Free, open, simple.",12920,2015-01-01 09:51:13
+select2,ivaynberg,,JavaScript,https://github.com/ivaynberg/select2,2012-03-04 18:43:12,"Select2 is a jQuery based replacement for select boxes. It supports searching, remote data sets, and infinite scrolling of results.",12828,2014-12-28 02:48:51
+homebrew,,,Ruby,https://github.com//homebrew,2009-05-20 19:38:37,The missing package manager for OS X.,12820,2013-06-09 16:52:14
+material-design-icons,google,google,CSS,https://github.com/google/material-design-icons,2014-10-08 18:01:28,Material Design icons by Google,12781,2014-11-29 19:35:39
+react,facebook,facebook,JavaScript,https://github.com/facebook/react,2013-05-24 16:15:54,"A declarative, efficient, and flexible JavaScript library for building user interfaces.",12766,2014-12-30 14:45:18
+httpie,jakubroztocil,,Python,https://github.com/jakubroztocil/httpie,2012-02-25 12:39:13,"HTTPie is a command line HTTP client, a user-friendly cURL replacement.",12736,2014-10-20 12:41:52
+Chart.js,nnnick,,JavaScript,https://github.com/nnnick/Chart.js,2013-03-17 23:56:36,Simple HTML5 Charts using the <canvas> tag,12628,2015-01-01 17:57:25
+ionic,driftyco,driftyco,JavaScript,https://github.com/driftyco/ionic,2013-08-20 23:06:02,Advanced HTML5 mobile development framework and SDK. Build great hybrid apps with web technologies you already know and love. Best friends with AngularJS.,12531,2014-12-31 21:56:32
+django,django,django,Python,https://github.com/django/django,2012-04-28 02:47:18,The Web framework for perfectionists with deadlines.,12422,2015-01-01 16:42:47
+phantomjs,ariya,,C++,https://github.com/ariya/phantomjs,2010-12-27 08:18:58,Scriptable Headless WebKit,12339,2014-12-22 03:08:30
+ember.js,emberjs,emberjs,JavaScript,https://github.com/emberjs/ember.js,2011-05-25 23:39:40,Ember.js - A JavaScript framework for creating ambitious web applications,12242,2015-01-01 18:02:02
+socket.io,Automattic,Automattic,JavaScript,https://github.com/Automattic/socket.io,2010-03-11 18:24:48,"Realtime application framework for Node.JS, with HTML5 WebSockets and cross-browser fallbacks support.",12140,2014-06-01 01:34:54
+requests,kennethreitz,,Python,https://github.com/kennethreitz/requests,2011-02-13 18:38:17,Python HTTP Requests for Humans���.,12109,2015-01-01 08:28:12
+flask,mitsuhiko,,Python,https://github.com/mitsuhiko/flask,2010-04-06 11:11:59,"A microframework based on Werkzeug, Jinja2 and good intentions",12091,2014-12-30 17:14:59
+devise,plataformatec,plataformatec,Ruby,https://github.com/plataformatec/devise,2009-09-16 12:15:12,Flexible authentication solution for Rails with Warden.,11951,2014-12-31 08:52:21
+socket.io,LearnBoost,LearnBoost,JavaScript,https://github.com/LearnBoost/socket.io,2010-03-11 18:24:48,"Realtime application framework for Node.JS, with HTML5 WebSockets and cross-browser fallbacks support.",11846,2014-05-24 22:19:49
+chosen,,harvesthq,JavaScript,https://github.com//chosen,2011-04-18 15:07:41,"Chosen is a library for making long, unwieldy select boxes more friendly.",11807,2013-04-24 19:28:03
+skrollr,Prinzhorn,,JavaScript,https://github.com/Prinzhorn/skrollr,2012-03-18 15:41:35,Stand-alone parallax scrolling library for mobile (Android + iOS) and desktop. No jQuery. Just plain JavaScript (and some love).,11723,2014-11-17 09:27:41
+javascript,airbnb,airbnb,,https://github.com/airbnb/javascript,2012-11-01 23:13:50,JavaScript Style Guide,11707,2014-12-16 01:06:48
+html5-boilerplate,h5bp,h5bp,JavaScript,https://github.com/h5bp/html5-boilerplate,2010-01-24 18:03:24,Professional front-end template. So much goodness baked in by default,11605,2012-03-23 04:20:26
+less.js,less,less,JavaScript,https://github.com/less/less.js,2010-02-20 17:25:38,Leaner CSS,11600,2015-01-01 17:56:50
+jQuery-File-Upload,blueimp,,JavaScript,https://github.com/blueimp/jQuery-File-Upload,2010-12-01 15:35:32,"File Upload widget with multiple file selection, drag&drop support, progress bars and preview images for jQuery. Supports cross-domain, chunked and resumable file uploads and client-side image resizing. Works with any server-side platform (PHP, Python, Ruby on Rails, Java, Node.js, Go etc.) that supports standard HTML form file uploads.",11563,2013-06-12 07:43:08
+redis,antirez,,C,https://github.com/antirez/redis,2009-03-21 22:32:25,"Redis is an in-memory database that persists on disk. The data model is key-value, but many different kind of values are supported: Strings, Lists, Sets, Sorted Sets, Hashes, HyperLogLogs, Bitmaps.",11534,2014-12-23 13:55:01
+bower,bower,bower,JavaScript,https://github.com/bower/bower,2012-09-07 00:15:39,A package manager for the web,11460,2014-12-22 15:57:21
+foundation,,zurb,JavaScript,https://github.com//foundation,2011-10-13 23:05:42,The most advanced responsive front-end framework in the world. Quickly create prototypes and production code for sites and apps that work on any kind of device.,11448,2013-05-22 22:30:21
+atom,atom,atom,CoffeeScript,https://github.com/atom/atom,2012-01-20 18:18:21,The hackable editor,11330,2014-12-31 04:23:30
+papers-we-love,papers-we-love,papers-we-love,,https://github.com/papers-we-love/papers-we-love,2013-12-15 14:31:41,Papers from the computer science community to read and discuss.,11317,2014-12-25 21:55:42
+async,caolan,,JavaScript,https://github.com/caolan/async,2010-06-01 21:01:30,Async utilities for node and the browser,11238,2014-12-18 22:52:53
+jekyll,,,Ruby,https://github.com//jekyll,2008-10-20 06:29:03,"Jekyll is a blog-aware, static site generator in Ruby",11216,2013-06-05 09:40:11
+neovim,neovim,neovim,VimL,https://github.com/neovim/neovim,2014-01-31 13:39:22,vim out of the box,11164,2014-12-30 23:01:16
+redis,antirez,,C,https://github.com/antirez/redis,2009-03-21 22:32:25,"Redis is an in-memory database that persists on disk. The data model is key-value, but many different kind of values are supported: Strings, Lists, Sets, Sorted Sets, Hashes",11159,2014-11-28 10:50:54
+jQuery-File-Upload,,,JavaScript,https://github.com//jQuery-File-Upload,2010-12-01 15:35:32,"File Upload widget with multiple file selection, drag&drop support, progress bars and preview images for jQuery. Supports cross-domain, chunked and resumable file uploads and client-side image resizing. Works with any server-side platform (PHP, Python, Ruby on Rails, Java, Node.js, Go etc.) that supports standard HTML form file uploads.",11135,2013-05-16 18:29:54
+react,facebook,facebook,JavaScript,https://github.com/facebook/react,2013-05-24 16:15:54,"React is a declarative, efficient, and extremely flexible JavaScript library for building user interfaces.",11117,2014-11-18 10:43:27
+todomvc,tastejs,tastejs,JavaScript,https://github.com/tastejs/todomvc,2011-06-03 19:56:33,"Helping you select an MV* framework - Todo apps for Backbone.js, Ember.js, AngularJS, and many more",11070,2014-12-31 14:29:23
+normalize.css,necolas,,CSS,https://github.com/necolas/normalize.css,2011-05-04 10:20:25,A collection of HTML element and attribute style normalizations,10983,2014-01-26 18:19:04
+normalize.css,necolas,,CSS,https://github.com/necolas/normalize.css,2011-05-04 10:20:25,"A modern, HTML5-ready alternative to CSS resets (as used by Bootstrap, HTML5 Boilerplate, YUI3, TweetDeck, Soundcloud, and many others).",10976,2014-01-24 21:16:50
+ionic,driftyco,driftyco,JavaScript,https://github.com/driftyco/ionic,2013-08-20 23:06:02,A full-stack platform of tools and services for developing hybrid mobile apps using web technologies. Best friends with AngularJS.,10811,2014-10-31 18:31:12
+ionic,driftyco,driftyco,JavaScript,https://github.com/driftyco/ionic,2013-08-20 23:06:02,Advanced HTML5 Mobile App Framework. A beautiful front-end framework for developing hybrid mobile apps in HTML5. Best friends with AngularJS.,10792,2014-10-31 15:55:58
+three.js,,,JavaScript,https://github.com//three.js,2010-03-23 18:58:01,JavaScript 3D library.,10653,2013-03-31 01:35:17
+react,facebook,facebook,JavaScript,https://github.com/facebook/react,2013-05-24 16:15:54,"React is a JavaScript library for building user interfaces. It's declarative, efficient, and extremely flexible. What's more, it works with the libraries and frameworks that you already know.",10628,2014-11-04 22:38:09
+brackets,,adobe,JavaScript,https://github.com//brackets,2011-12-07 21:14:40,"An open source code editor for the web, written in JavaScript, HTML and CSS.",10620,2013-06-20 18:32:49
+Spoon-Knife,octocat,,,https://github.com/octocat/Spoon-Knife,2011-01-27 19:30:43,This repo is for demonstration purposes only. Comments and issues may or may not be responded to.,10614,2014-01-31 00:52:24
+gulp,gulpjs,gulpjs,JavaScript,https://github.com/gulpjs/gulp,2013-07-04 05:26:06,The streaming build system,10602,2014-12-30 05:05:41
+hhvm,facebook,facebook,C++,https://github.com/facebook/hhvm,2010-01-02 01:17:06,A virtual machine designed for executing programs written in Hack and PHP.,10585,2014-12-31 21:07:27
+foundation,zurb,zurb,Ruby,https://github.com/zurb/foundation,2011-10-13 23:05:42,The most advanced responsive front-end framework in the world. Quickly create prototypes and production code for sites and apps that work on any kind of device.,10549,2013-04-02 22:48:54
+neovim,neovim,neovim,VimL,https://github.com/neovim/neovim,2014-01-31 13:39:22,vim for the 21st century,10528,2014-11-12 16:48:32
+github-cheat-sheet,tiimgreen,,,https://github.com/tiimgreen/github-cheat-sheet,2014-04-12 16:38:42,A list of cool features of Git and GitHub.,10512,2014-08-31 09:53:46
+ratchet,twbs,twbs,CSS,https://github.com/twbs/ratchet,2012-08-17 05:41:57,"Build mobile apps with simple HTML, CSS, and JS components.",10479,2014-12-29 02:18:11
+coffeescript,jashkenas,,CoffeeScript,https://github.com/jashkenas/coffeescript,2009-12-18 01:39:53,Unfancy JavaScript,10462,2014-12-03 15:20:32
+jquery-pjax,defunkt,,JavaScript,https://github.com/defunkt/jquery-pjax,2011-02-26 02:44:18,pushState + ajax = pjax,10450,2014-12-03 05:32:18
+gitflow,nvie,,Shell,https://github.com/nvie/gitflow,2010-01-20 23:14:12,Git extensions to provide high-level repository operations for Vincent Driessen's branching model.,10437,2012-09-26 10:25:25
+dotfiles,mathiasbynens,,VimL,https://github.com/mathiasbynens/dotfiles,2011-09-05 18:07:54,".files, including ~/.osx ��� sensible hacker defaults for OS X",10351,2014-12-26 16:06:53
+Modernizr,Modernizr,Modernizr,JavaScript,https://github.com/Modernizr/Modernizr,2009-09-25 20:13:23,Modernizr is a JavaScript library that detects HTML5 and CSS3 features in the user’s browser.,10301,2013-09-19 07:14:31
+Spoon-Knife,,,,https://github.com//Spoon-Knife,2011-01-27 19:30:43,This repo is for demonstration purposes only. Comments and issues may or may not be responded to.,10277,2011-10-31 14:34:52
+foundation,,zurb,Ruby,https://github.com//foundation,2011-10-13 23:05:42,The most advanced responsive front-end framework in the world. Quickly create prototypes and production code for sites and apps that work on any kind of device.,10257,2013-03-22 19:27:49
+lime,limetext,limetext,Go,https://github.com/limetext/lime,2012-10-03 18:10:02,Open source API-compatible alternative to Sublime Text,10237,2014-12-28 16:34:39
+hhvm,facebook,facebook,C++,https://github.com/facebook/hhvm,2010-01-02 01:17:06,HHVM is an open-source virtual machine designed for executing programs written in Hack and PHP.,10228,2014-11-18 08:40:44
+gitignore,,github,,https://github.com//gitignore,2010-11-08 20:17:14,A collection of useful .gitignore templates,10192,2013-05-26 05:56:08
+pdf.js,mozilla,mozilla,JavaScript,https://github.com/mozilla/pdf.js,2011-04-26 06:32:03,PDF Reader in JavaScript,10180,2014-12-30 16:06:37
+angular.js,,angular,JavaScript,https://github.com//angular.js,2010-01-06 00:34:37,,10176,2013-05-29 05:43:31
+textmate,textmate,textmate,C++,https://github.com/textmate/textmate,2012-08-08 16:25:52,TextMate is a graphical text editor for OS X 10.7+,10151,2014-12-25 11:50:14
+httpie,jakubroztocil,,Python,https://github.com/jakubroztocil/httpie,2012-02-25 12:39:13,"HTPie is a command line HTTP client, a user-friendly cURL replacement.",10148,2014-06-28 17:52:14
+Semantic-UI,Semantic-Org,Semantic-Org,JavaScript,https://github.com/Semantic-Org/Semantic-UI,2013-04-08 23:32:04,Semantic empowers designers and developers by creating a shared vocabulary for UI.,10124,2014-11-06 22:22:50
+pure,yahoo,yahoo,CSS,https://github.com/yahoo/pure,2013-04-22 16:16:39,"A set of small, responsive CSS modules that you can use in every web project.",10093,2014-12-04 00:05:41
+hhvm,facebook,facebook,C++,https://github.com/facebook/hhvm,2010-01-02 01:17:06,HHVM is an open-source virtual machine designed for executing programs written in Hack and PHP. HHVM uses a just-in-time (JIT) compilation approach to achieve superior performance while maintaining the flexibility that PHP developers are accustomed to.,10073,2014-10-30 03:40:10
+Front-end-Developer-Interview-Questions,h5bp,h5bp,,https://github.com/h5bp/Front-end-Developer-Interview-Questions,2012-02-09 23:34:10,"A list of helpful front-end related questions you can use to interview potential candidates, test yourself or completely ignore.",9961,2014-12-30 04:59:11
+oh-my-zsh,,,Shell,https://github.com//oh-my-zsh,2009-08-28 18:15:37,"A community-driven framework for managing your zsh configuration. Includes 120+ optional plugins (rails, git, OSX, hub, capistrano, brew, ant, macports, etc), over 120 themes to spice up your morning, and an auto-update tool so that makes it easy to keep up with the latest updates from the community.",9932,2013-05-10 03:38:46
+Spoon-Knife,octocat,,,https://github.com/octocat/Spoon-Knife,2011-01-27 19:30:43,This repo is for demonstration purposes only.,9924,2014-02-04 22:38:36
+Spoon-Knife,octocat,,CSS,https://github.com/octocat/Spoon-Knife,2011-01-27 19:30:43,This repo is for demonstration purposes only.,9919,2014-09-03 21:22:02
+diaspora,diaspora,diaspora,Ruby,https://github.com/diaspora/diaspora,2010-09-15 05:20:04,Distributed and contextual social networking,9686,2014-12-29 16:37:22
+hammer.js,hammerjs,hammerjs,JavaScript,https://github.com/hammerjs/hammer.js,2012-03-02 12:58:28,A javascript library for multi-touch gestures :// You can touch this,9654,2014-10-25 15:16:12
+normalize.css,necolas,,CSS,https://github.com/necolas/normalize.css,2011-05-04 10:20:25,"A modern, HTML5-ready alternative to CSS resets (as used by Twitter Bootstrap, HTML5 Boilerplate, TweetDeck, Soundcloud, and many others).",9500,2013-08-16 04:47:53
+oh-my-zsh,robbyrussell,,Shell,https://github.com/robbyrussell/oh-my-zsh,2009-08-28 18:15:37,"A community-driven framework for managing your zsh configuration. Includes 40+ optional plugins (rails, git, OSX, hub, capistrano, brew, ant, macports, etc), over 80 terminal themes to spice up your morning, and an auto-update tool so that makes it easy to keep up with the latest updates from the community.",9470,2013-04-24 03:54:21
+symfony,symfony,symfony,PHP,https://github.com/symfony/symfony,2010-01-04 14:21:21,The Symfony PHP framework,9451,2014-12-31 14:43:34
+pop,facebook,facebook,Objective-C++,https://github.com/facebook/pop,2014-03-30 22:29:12,"An extensible iOS and OS X animation library, useful for physics-based interactions.",9448,2014-11-10 22:49:37
+lime,limetext,limetext,Go,https://github.com/limetext/lime,2012-10-03 18:10:02,Open source API compatible successor to Sublime Text,9421,2014-10-21 00:13:43
+elasticsearch,elasticsearch,elasticsearch,Java,https://github.com/elasticsearch/elasticsearch,2010-02-08 13:20:56,"Open Source, Distributed, RESTful Search Engine",9414,2014-12-31 13:50:15
+lime,limetext,limetext,Go,https://github.com/limetext/lime,2012-10-03 18:10:02,Open source API compatible successor to ST,9409,2014-10-20 09:48:36
+lime,limetext,limetext,Go,https://github.com/limetext/lime,2012-10-03 18:10:02,Experimental Sublime Text clone,9408,2014-10-20 09:48:36
+ace,ajaxorg,ajaxorg,JavaScript,https://github.com/ajaxorg/ace,2010-10-27 10:43:36,Ace (Ajax.org Cloud9 Editor),9393,2014-12-31 22:00:21
+Leaflet,Leaflet,Leaflet,JavaScript,https://github.com/Leaflet/Leaflet,2010-09-22 16:57:44,JavaScript library for mobile-friendly interactive maps,9375,2014-12-29 21:50:30
+jquery-mobile,jquery,jquery,JavaScript,https://github.com/jquery/jquery-mobile,2010-09-13 15:02:22,jQuery Mobile Framework,9352,2014-12-29 17:29:55
+normalize.css,necolas,,,https://github.com/necolas/normalize.css,2011-05-04 10:20:25,"A modern, HTML5-ready alternative to CSS resets (as used by Twitter Bootstrap, HTML5 Boilerplate, TweetDeck, Soundcloud, and many others).",9341,2013-07-02 06:56:09
+animate.css,daneden,,CSS,https://github.com/daneden/animate.css,2011-10-12 10:07:38,Cross-browser CSS3 animations. Plug and play. Do a little dance.,9332,2014-01-31 14:45:20
+oh-my-zsh,,,Shell,https://github.com//oh-my-zsh,2009-08-28 18:15:37,"A community-driven framework for managing your zsh configuration. Includes 40+ optional plugins (rails, git, OSX, hub, capistrano, brew, ant, macports, etc), over 80 terminal themes to spice up your morning, and an auto-update tool so that makes it easy to keep up with the latest updates from the community.",9308,2013-04-12 13:17:21
+You-Dont-Know-JS,getify,,JavaScript,https://github.com/getify/You-Dont-Know-JS,2013-11-16 02:37:24,A JavaScript book series. @YDKJS on twitter.,9237,2014-12-29 21:28:42
+coffee-script,jashkenas,,CoffeeScript,https://github.com/jashkenas/coffee-script,2009-12-18 01:39:53,Unfancy JavaScript,9232,2014-05-01 14:49:00
+awesome-awesomeness,bayandin,,,https://github.com/bayandin/awesome-awesomeness,2014-07-08 05:44:19,A curated list of awesome awesomeness,9203,2014-12-30 18:43:53
+Effeckt.css,h5bp,h5bp,CSS,https://github.com/h5bp/Effeckt.css,2013-07-02 19:57:06,A Performant Transitions and Animations Library,9178,2014-10-21 02:57:08
+Modernizr,,Modernizr,JavaScript,https://github.com//Modernizr,2009-09-25 20:13:23,Modernizr is a JavaScript library that detects HTML5 and CSS3 features in the user’s browser.,9167,2013-05-19 08:48:22
+ratchet,twbs,twbs,JavaScript,https://github.com/twbs/ratchet,2012-08-17 05:41:57,"Build mobile apps with simple HTML, CSS, and JS components.",9116,2014-06-24 23:25:27
+http-api-design,interagent,interagent,,https://github.com/interagent/http-api-design,2014-05-07 17:00:37,HTTP API design guide extracted from work on the Heroku Platform API,9107,2014-12-02 15:46:14
+neovim,neovim,neovim,C,https://github.com/neovim/neovim,2014-01-31 13:39:22,vim for the 21st century,9105,2014-07-27 17:02:04
+sweetalert,t4t5,,CSS,https://github.com/t4t5/sweetalert,2014-09-30 11:12:48,"A beautiful replacement for JavaScript's ""alert""",9090,2014-12-22 20:00:19
+Effeckt.css,h5bp,h5bp,CSS,https://github.com/h5bp/Effeckt.css,2013-07-02 19:57:06,A Performant Transitions and Animations Library:,9083,2014-10-21 02:57:08
+pop,facebook,facebook,Objective-C++,https://github.com/facebook/pop,2014-03-30 22:29:12,Extensible iOS and OS X animation library.,9057,2014-11-10 22:49:37
+express,,,JavaScript,https://github.com//express,2009-06-26 18:56:01,"Sinatra inspired web development framework for node.js -- insanely fast, flexible, and simple",9033,2013-03-06 22:31:45
+typeahead.js,twitter,twitter,JavaScript,https://github.com/twitter/typeahead.js,2013-02-19 19:45:01,typeahead.js is a fast and fully-featured autocomplete library,9007,2014-10-01 14:38:12
+pure,yui,yui,CSS,https://github.com/yui/pure,2013-04-22 16:16:39,"A set of small, responsive CSS modules that you can use in every web project.",8995,2014-08-21 00:36:40
+frontend-dev-bookmarks,dypsilon,,,https://github.com/dypsilon/frontend-dev-bookmarks,2013-06-22 13:23:55,A huge list of frontend development resources I collected over time. Pull requests are welcome. Website coming soon.,8934,2014-02-05 10:31:18
+grunt,gruntjs,gruntjs,JavaScript,https://github.com/gruntjs/grunt,2011-09-21 15:16:20,Grunt: The JavaScript Task Runner,8921,2014-10-13 04:22:27
+ansible,ansible,ansible,Python,https://github.com/ansible/ansible,2012-03-06 14:58:02,"Ansible is a radically simple IT automation platform that makes your applications and systems easier to deploy. Avoid writing scripts or custom code to deploy and update your applications��� automate in a language that approaches plain English, using SSH, with no agents to install on remote systems.",8915,2014-12-29 22:40:34
+Flat-UI,designmodo,designmodo,JavaScript,https://github.com/designmodo/Flat-UI,2013-03-03 15:36:49,"Flat UI Free - Design Framework (html/css3/less/js). Flat UI is based on Bootstrap, a comfortable, responsive, and functional framework that simplifies the development of websites.",8874,2014-11-26 15:13:24
+CodeIgniter,bcit-ci,bcit-ci,PHP,https://github.com/bcit-ci/CodeIgniter,2011-08-19 13:34:00,Open Source PHP Framework (originally from EllisLab),8852,2014-12-25 00:06:12
+sails,balderdashy,balderdashy,JavaScript,https://github.com/balderdashy/sails,2012-03-18 19:46:15,Realtime MVC Framework for Node.js,8798,2014-12-31 21:53:41
+jquery-ui,jquery,jquery,JavaScript,https://github.com/jquery/jquery-ui,2010-01-19 14:40:34,The official jQuery user interface library.,8681,2014-12-31 15:50:20
+neovim,neovim,neovim,C,https://github.com/neovim/neovim,2014-01-31 13:39:22,vim's rebirth for the 21st century,8664,2014-06-26 02:42:04
+linux,,,C,https://github.com//linux,2011-09-04 22:48:12,Linux kernel source tree,8656,2013-05-22 15:47:30
+slick,kenwheeler,,JavaScript,https://github.com/kenwheeler/slick,2014-03-24 02:10:05,the last carousel you'll ever need,8651,2014-11-18 04:54:41
+underscore,documentcloud,documentcloud,JavaScript,https://github.com/documentcloud/underscore,2009-10-25 18:31:06,JavaScript's utility _ belt,8648,2013-07-07 06:43:25
+web-starter-kit,google,google,CSS,https://github.com/google/web-starter-kit,2014-04-07 08:45:18,Google Web Starter Kit (Beta),8636,2014-12-29 19:48:20
+backbone-fundamentals,addyosmani,,JavaScript,https://github.com/addyosmani/backbone-fundamentals,2011-12-20 20:49:44,A creative-commons book on Backbone.js for beginners and advanced users alike,8619,2014-12-30 12:27:36
+less.js,cloudhead,,JavaScript,https://github.com/cloudhead/less.js,2010-02-20 17:25:38,Leaner CSS,8619,2013-06-20 21:40:22
+octopress,imathis,,Ruby,https://github.com/imathis/octopress,2009-10-18 21:41:32,Octopress is an obsessively designed framework for Jekyll blogging. It���s easy to configure and easy to deploy. Sweet huh?,8600,2014-12-27 20:03:04
+gitlabhq,,gitlabhq,Ruby,https://github.com//gitlabhq,2011-10-02 16:25:27,Project management and code hosting application. Follow us on twitter @gitlabhq,8563,2013-06-10 10:23:01
+awesome-python,vinta,,Python,https://github.com/vinta/awesome-python,2014-06-27 21:00:06,"A curated list of awesome Python frameworks, libraries and software",8552,2014-12-31 11:13:28
+todomvc,tastejs,tastejs,JavaScript,https://github.com/tastejs/todomvc,2011-06-03 19:56:33,"Helping you select an MV* framework - Todo apps for Backbone.js, Ember.js, AngularJS, Spine and many more",8490,2014-02-01 20:29:51

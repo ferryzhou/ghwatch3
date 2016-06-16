@@ -1,0 +1,26 @@
+<repos>
+  <div class="list-group">
+    <a each={item in items} href="#repo/{item.owner}/{item.name}" class="list-group-item">
+      <h4 class="list-group-item-heading">{ item.name }</h4>
+      <p class="list-group-item-text">{ item.description }</p>
+    </a>
+  </div>
+
+  <script>
+    // http://postgrest.com/api/reading/
+    var self = this
+    var url = 'http://localhost:3000/repos'
+    $.ajax({
+      url: url,
+      type: "GET",
+      beforeSend: function(xhr) {
+        xhr.setRequestHeader('Range', '0-100');
+      },
+      success: function(data) {
+        self.items = data
+        self.update()
+      }
+    });
+  </script>
+
+</repos>

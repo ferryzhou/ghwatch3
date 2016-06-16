@@ -4,6 +4,7 @@ import (
 	"bufio"
 	"compress/gzip"
 	"encoding/csv"
+	"encoding/gob"
 	"fmt"
 	"io"
 	"log"
@@ -31,12 +32,13 @@ type Repo struct {
 type RepoStore interface {
 	SimilarRepos(shortPath string) []RepoRelation
 	RepoByShortPath(s string) *Repo
-	//ReposByOwner(s string) []*Repo
+	ReposByOwner(s string) []*Repo
 }
 
 type InMemRepoStore struct {
-	repos map[string]*Repo
-	recs  map[string][]RepoRelation
+	Repos      map[string]*Repo
+	Recs       map[string][]RepoRelation
+	OwnerRepos map[string][]*Repo
 }
 
 type RepoRelation struct {
@@ -53,25 +55,35 @@ func (a ByScore) Swap(i, j int) { a[i], a[j] = a[j], a[i] }
 func (a ByScore) Less(i, j int) bool { return a[i].Score >= a[j].Score }
 
 func (r *InMemRepoStore) SimilarRepos(shortPath string) []RepoRelation {
-	return r.recs[shortPath]
+	return r.Recs[shortPath]
 }
 
 func (r *InMemRepoStore) RepoByShortPath(s string) *Repo {
-	return r.repos[s]
+	return r.Repos[s]
 }
 
 func (r *InMemRepoStore) ReposShortPaths(ss []string) []*Repo {
 	repos := []*Repo{}
 	for _, s := range ss {
-		if r.repos[s] != nil {
-			repos = append(repos, r.repos[s])
+		if r.Repos[s] != nil {
+			repos = append(repos, r.Repos[s])
 		}
 	}
 	return repos
 }
 
+func (r *InMemRepoStore) ReposByOwner(s string) []*Repo {
+	return r.OwnerRepos[s]
+}
+
 func NewInMemRepoStore() *InMemRepoStore {
-	return &InMemRepoStore{make(map[string]*Repo), make(map[string][]RepoRelation)}
+	return &InMemRepoStore{make(map[string]*Repo), make(map[string][]RepoRelation), make(map[string][]*Repo)}
+}
+
+func (r *InMemRepoStore) GenReposByOwner() {
+	for _, v := range r.Repos {
+		r.OwnerRepos[v.owner] = append(r.OwnerRepos[v.owner], v)
+	}
 }
 
 func ReposFromCSVReader(r *csv.Reader, repos map[string]*Repo) error {
@@ -124,7 +136,7 @@ func ReposFromCSVFile(path string, repos map[string]*Repo) error {
 }
 
 func (s *InMemRepoStore) LoadReposFromCSVGZip(path string) error {
-	return ReposFromCSVGZip(path, s.repos)
+	return ReposFromCSVGZip(path, s.Repos)
 }
 
 func (s *InMemRepoStore) LoadRecsFromCSVGZip(path string) error {
@@ -140,7 +152,7 @@ func (s *InMemRepoStore) LoadRecsFromCSVGZip(path string) error {
 	defer ar.Close()
 
 	r := csv.NewReader(bufio.NewReader(ar))
-	return RecsFromCSVReader(r, s.recs)
+	return RecsFromCSVReader(r, s.Recs)
 }
 func (s *InMemRepoStore) LoadRecsFromCSVGZipFiles(pattern string) error {
 	files, err := filepath.Glob(pattern)
@@ -228,5 +240,29 @@ func ShortPathFromURL(url string) string {
 }
 
 func (r *InMemRepoStore) Save(path string) error {
+	f, err := os.Create(path)
+	if err != nil {
+		return fmt.Errorf("failed to create file %v: %v", path, err)
+	}
+	defer f.Close()
+	w := bufio.NewWriter(f)
+	defer w.Flush()
+	enc := gob.NewEncoder(w)
+	if err = enc.Encode(r); err != nil {
+		return fmt.Errorf("failed to encode data: %v", err)
+	}
+	return nil
+}
+
+func (r *InMemRepoStore) Load(path string) error {
+	f, err := os.Open(path)
+	if err != nil {
+		return fmt.Errorf("failed to open %v: %v", path, err)
+	}
+	defer f.Close()
+	dec := gob.NewDecoder(f)
+	if err = dec.Decode(r); err != nil {
+		return fmt.Errorf("failed to decode: %v", err)
+	}
 	return nil
 }

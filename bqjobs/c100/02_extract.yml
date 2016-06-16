@@ -1,0 +1,5 @@
+command: extract
+
+table: repos_c100_full
+
+gspath: gs://ghwatch3/repos_c100_full.csv.gz 

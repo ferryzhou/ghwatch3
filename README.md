@@ -36,7 +36,10 @@ proc --in_dir=results --out_dir=processed
 
 1. Install postgrest
 
-1.
+1. Serve repos data
+
+1. Serves recommendation data
+
 
 ## Frontend
 

@@ -20,6 +20,7 @@ import (
 var (
 	p         *proc.Proc
 	inGobPath = flag.String("in_gob_path", "", "in mem store gob data as input")
+	port      = flag.String("port", "8080", "port number")
 )
 
 func main() {
@@ -34,7 +35,7 @@ func main() {
 	router.HandleFunc("/repos", repoIndex)
 	router.HandleFunc("/rec/{owner}/{repo}", repoRecNorm)
 	router.HandleFunc("/recr/{owner}/{repo}", repoRecRaw)
-	log.Fatal(http.ListenAndServe(":8080", router))
+	log.Fatal(http.ListenAndServe(":"+*port, router))
 }
 
 func index(w http.ResponseWriter, r *http.Request) {

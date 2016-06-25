@@ -17,36 +17,47 @@ idea: download data from bigquery github table, analyze the data
 1. Setup bigquery project, dataset and storage bucket
 
 1. Download data
-```
-bqrun --jobs_path=bqjobs/*.yml  --project=950350008903 \
- --dataset=ghwatch3 --bucket=ghwatch3 --dst_dir=results
-```
+  ```
+  ./run.sh get_bq_data
+  ```
+
+1. Result Data
+  1. repos.csv
+	  repo_url, name, owner, created_at, watchers, language, description, ...
+  1. recs.csv
+    repo1_url, repo2_url, count
 
 ## Process Data
 
+raw data is large and we don't need them all. here we sequencing the url and
+truncate recommendations data.
+
 map shortPath to int and vice-versa
-recs[i] is a slice of pairs, []<int, int>
+recs[i] is a slice of
 
 ```
-proc --in_dir=results --out_dir=processed
+./run.sh process_data
 ```
-
 
 ## Serve the Processed Data With Restful API
 
-1. Install postgrest
-
-1. Serve repos data
+1. Serve repos data: /repos?
+  1. Install postgrest
+  1. Load data to postgres
+  ```
+ ./run.sh csv2db
+  ```
+  1. Run postgrest
+  ```
+  ./run.sh serve_repos
+  ```
 
 1. Serves recommendation data
-
+```
+./run.sh serve_recs
+```
 
 ## Frontend
-
-
-
-## Required Data
-1. repos.csv
-	name, owner, created_at, watchers, language, discription, ...
-1. recs.csv
-    shortPath, shortPath, score
+```
+cd web && python -m SimpleHTTPServer 3000
+```

@@ -6,6 +6,14 @@ function get_bq_data() {
    --dataset=ghwatch3 --bucket=ghwatch3 --dst_dir=results
 }
 
+function process_data() {
+  go run cmd/procrun/procrun.go --in_dir=results --out_dir=processed
+}
+
+function serve_recs() {
+  go run cmd/procserv/procserv.go --in_gob_path=processed/recs.gob --port=3001
+}
+
 dbname=bqtest
 schema_prefix="ghwatch3"
 function csv2db() {
@@ -15,20 +23,32 @@ function csv2db() {
   schema_name=ghwatch3_$t
   schema="${schema_tmpl//ghwatch3_/$schema_name}"
   echo $schema
-  echo $(psql $dbname -c "select schema_name from information_schema.schemata where schema_name like '$schema_prefix%'")
+  list_schemas
   echo $schema | psql $dbname
-  echo "import csv ...."
-  gzip -dc results/repos_c1000_full.csv.gz > /tmp/repos.csv
-  psql $dbname -c "COPY \"$schema_name\".repos (name,owner,org,lang,url,created_at,description,homepage,watchers,pushed_at) FROM '/tmp/repos.csv' DELIMITER ',' CSV HEADER;"
+  echo "import repos csv ...."
+  #gzip -dc results/repos_c1000_full.csv.gz > /tmp/repos.csv
+  cp -f processed/repos.csv /tmp/repos.csv
+  psql $dbname -c "COPY \"$schema_name\".repos (id,short_path,name,owner,org,lang,url,created_at,description,homepage,watchers,pushed_at) FROM '/tmp/repos.csv' DELIMITER ',' CSV HEADER;"
   echo $(psql $dbname -c "SELECT COUNT(*) FROM \"$schema_name\".repos;")
-  for f in $( ls results/repo_repo_count_c1000_*.csv.gz); do
-    echo "unzip $f"
-    gzip -dc $f > /tmp/recs.csv
-    echo "import /tmp/recs.csv"
-    psql $dbname -c "COPY \"$schema_name\".recs FROM '/tmp/recs.csv' DELIMITER ',' CSV HEADER;"
-  done
-  echo $(psql $dbname -c "SELECT COUNT(*) FROM \"$schema_name\".recs;")
   echo "csv2db finished ...."
+}
+
+function list_schemas() {
+  echo $(psql $dbname -c "select schema_name from information_schema.schemata where schema_name like '$schema_prefix%' order by schema_name desc")
+}
+
+function latest_schema() {
+  echo $(psql $dbname -c "select schema_name from information_schema.schemata where schema_name like '$schema_prefix%' order by schema_name desc" | sed -n '3 p')
+}
+
+function serve_repos() {
+  schema_name=$(latest_schema)
+  echo $schema_name
+  postgrest "host=localhost dbname=$dbname" -a $(whoami) -s $schema_name -p 3000
+}
+
+function serve_frontend() {
+  http-server web
 }
 
 $@

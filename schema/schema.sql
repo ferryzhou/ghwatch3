@@ -4,6 +4,8 @@ create schema "ghwatch3_";
 
 CREATE TABLE "ghwatch3_".repos
 (
+  id integer NOT NULL,
+  short_path varchar NOT NULL,
   url varchar NOT NULL,
   name varchar NOT NULL,
   description text,
@@ -14,14 +16,6 @@ CREATE TABLE "ghwatch3_".repos
   watchers integer,
   created_at date,
   pushed_at date
-);
-
-CREATE TABLE "ghwatch3_".recs
-(
-  repo1 varchar,
-  repo2 varchar,
-  score real,
-  PRIMARY KEY(repo1, repo2)
 );
 
 COMMIT;

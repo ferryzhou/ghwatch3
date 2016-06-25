@@ -7,21 +7,44 @@
     </div>
   </div>
 
+  <div class="list-group">
+    <a each={item in items} href="#repo/{item}" class="list-group-item">
+      <h4 class="list-group-item-heading">{item}</h4>
+    </a>
+  </div>
+
   <script>
     // http://postgrest.com/api/reading/
     var self = this
-    var url = 'http://localhost:3000/repos?url=like.*' + this.opts.owner + '/' + this.opts.repo_name
+    var short_path = this.opts.owner + '/' + this.opts.repo_name
+    var url = 'http://localhost:3000/repos?short_path=eq.' + short_path
     $.ajax({
       url: url,
       type: "GET",
       beforeSend: function(xhr) {
-        xhr.setRequestHeader('Range', '0-10');
+        xhr.setRequestHeader('Range', '0-1');
       },
       success: function(data) {
         console.log(data)
         self.repo = data[0]
         self.update()
+        get_recs()
       }
     });
+
+    var rec_url = 'http://localhost:3001/rec/' + short_path
+    function get_recs() {
+      $.ajax({
+        url: rec_url,
+        type: "GET",
+        jsonp: "callback",
+        dataType: "jsonp",
+        success: function(data) {
+          console.log(data)
+          self.items = data
+          self.update()
+        }
+      });
+    }
   </script>
 </repo>

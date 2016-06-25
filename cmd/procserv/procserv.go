@@ -3,7 +3,7 @@
 //   cd ghwatch3
 //   go run cmd/procserv/procserv.go --in_gob_path=processed/recs.gob
 //   curl http://localhost:8080/rec/twbs/bootstrap
-//   curl http://localhost:8080/recr/twbs/bootstrap
+//   curl http://localhost:8080/recn/twbs/bootstrap
 package main
 
 import (
@@ -33,8 +33,8 @@ func main() {
 	router := mux.NewRouter().StrictSlash(true)
 	router.HandleFunc("/", index)
 	router.HandleFunc("/repos", repoIndex)
-	router.HandleFunc("/rec/{owner}/{repo}", repoRecNorm)
-	router.HandleFunc("/recr/{owner}/{repo}", repoRecRaw)
+	router.HandleFunc("/rec/{owner}/{repo}", repoRecRaw)
+	router.HandleFunc("/recn/{owner}/{repo}", repoRecNorm)
 	log.Fatal(http.ListenAndServe(":"+*port, router))
 }
 
@@ -59,7 +59,14 @@ func repoRecRaw(w http.ResponseWriter, r *http.Request) {
 	vars := mux.Vars(r)
 	sp := vars["owner"] + "/" + vars["repo"]
 	rp := p.RecRaw(sp)
-	if err := json.NewEncoder(w).Encode(rp); err != nil {
+	bs, err := json.Marshal(rp)
+	if err != nil {
 		log.Printf("encode error %v: %v", rp, err)
+	}
+	callback := r.FormValue("callback")
+	if callback != "" {
+		fmt.Fprintf(w, "%s(%s)", callback, bs)
+	} else {
+		w.Write(bs)
 	}
 }

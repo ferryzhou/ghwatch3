@@ -41,23 +41,39 @@ recs[i] is a slice of
 
 ## Serve the Processed Data With Restful API
 
+1. Prerequisite
+
+```
+npm install http-server -g
+//install postgrest
+```
+
 1. Serve repos data: /repos?
-  1. Install postgrest
   1. Load data to postgres
-  ```
- ./run.sh csv2db
-  ```
+    ```
+   ./run.sh csv2db
+    ```
   1. Run postgrest
-  ```
-  ./run.sh serve_repos
-  ```
+    ```
+    ./run.sh serve_repos
+    ```
 
 1. Serves recommendation data
 ```
 ./run.sh serve_recs
 ```
 
+1. Test api
+
+```
+./run.sh test_api
+```
+
 ## Frontend
 ```
-cd web && python -m SimpleHTTPServer 3000
+./run.sh serve_frontend
 ```
+
+## References
+
+1. http://postgrest.com/api/reading/

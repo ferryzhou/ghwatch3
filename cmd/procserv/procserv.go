@@ -15,6 +15,7 @@ import (
 
 	"github.com/ferryzhou/ghwatch3/proc"
 	"github.com/gorilla/mux"
+	"github.com/rs/cors"
 )
 
 var (
@@ -33,9 +34,11 @@ func main() {
 	router := mux.NewRouter().StrictSlash(true)
 	router.HandleFunc("/", index)
 	router.HandleFunc("/repos", repoIndex)
-	router.HandleFunc("/rec/{owner}/{repo}", repoRecRaw)
-	router.HandleFunc("/recn/{owner}/{repo}", repoRecNorm)
-	log.Fatal(http.ListenAndServe(":"+*port, router))
+	router.HandleFunc("/rec", repoRec)
+	// cors.Default() setup the middleware with default options being
+	// all origins accepted with simple methods (GET, POST).
+	handler := cors.Default().Handler(router)
+	log.Fatal(http.ListenAndServe(":"+*port, handler))
 }
 
 func index(w http.ResponseWriter, r *http.Request) {
@@ -46,27 +49,15 @@ func repoIndex(w http.ResponseWriter, r *http.Request) {
 	fmt.Fprintln(w, "Repo Index!")
 }
 
-func repoRecNorm(w http.ResponseWriter, r *http.Request) {
-	vars := mux.Vars(r)
-	sp := vars["owner"] + "/" + vars["repo"]
-	rp := p.Rec(sp)
+func repoRec(w http.ResponseWriter, r *http.Request) {
+	sp := r.FormValue("sp")
+	rp := p.RecRaw(sp)
+	log.Printf("norm: %q", r.FormValue("norm"))
+	if r.FormValue("norm") != "" {
+		rp = p.RecNorm(sp)
+	}
+	w.Header().Set("Content-Type", "application/json")
 	if err := json.NewEncoder(w).Encode(rp); err != nil {
 		log.Printf("encode error %v: %v", rp, err)
-	}
-}
-
-func repoRecRaw(w http.ResponseWriter, r *http.Request) {
-	vars := mux.Vars(r)
-	sp := vars["owner"] + "/" + vars["repo"]
-	rp := p.RecRaw(sp)
-	bs, err := json.Marshal(rp)
-	if err != nil {
-		log.Printf("encode error %v: %v", rp, err)
-	}
-	callback := r.FormValue("callback")
-	if callback != "" {
-		fmt.Fprintf(w, "%s(%s)", callback, bs)
-	} else {
-		w.Write(bs)
 	}
 }

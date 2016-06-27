@@ -56,8 +56,8 @@ function serve_frontend() {
 
 function test_api() {
   echo 'test recommendation api ......'
-  curl http://localhost:$PORT_REC/rec/twbs/bootstrap
-  curl http://localhost:$PORT_REC/recn/twbs/bootstrap
+  curl "http://localhost:$PORT_REC/rec?sp=twbs/bootstrap"
+  curl "http://localhost:$PORT_REC/rec?sp=twbs/bootstrap&norm=true"
   echo 'test repo api ........'
   # cannot use curl
   #curl http://localhost:3000/repos?short_path=eq.twitter/bootstrap

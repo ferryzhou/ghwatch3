@@ -74,9 +74,14 @@ func (p *Proc) Rec(shortPath string) []string {
 	return p.recWith(shortPath, p.RecsNorm)
 }
 
-// RecRaw return recommended repos given a repo's short path.
+// RecRaw return recommended repos using raw score given a repo's short path.
 func (p *Proc) RecRaw(shortPath string) []string {
 	return p.recWith(shortPath, p.RecsRaw)
+}
+
+// RecNorm return recommended repos using normalized score given a repo's short path.
+func (p *Proc) RecNorm(shortPath string) []string {
+	return p.recWith(shortPath, p.RecsNorm)
 }
 
 func (p *Proc) recWith(shortPath string, recs [][]int) []string {

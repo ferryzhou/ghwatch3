@@ -44,7 +44,6 @@ recs[i] is a slice of
 1. Prerequisite
 
 ```
-npm install http-server -g
 //install postgrest
 ```
 
@@ -58,20 +57,18 @@ npm install http-server -g
     ./run.sh serve_repos
     ```
 
-1. Serves recommendation data
+
+## Start Web Server
 ```
-./run.sh serve_recs
+./run.sh serve
 ```
+
+## Misc
 
 1. Test api
 
 ```
 ./run.sh test_api
-```
-
-## Frontend
-```
-./run.sh serve_frontend
 ```
 
 ## References

@@ -2,8 +2,6 @@
 // Example:
 //   cd ghwatch3
 //   go run cmd/procserv/procserv.go --in_gob_path=processed/recs.gob
-//   curl http://localhost:8080/rec/twbs/bootstrap
-//   curl http://localhost:8080/recn/twbs/bootstrap
 package main
 
 import (
@@ -32,16 +30,18 @@ func main() {
 	}
 	log.Printf("Data loaded (%v), ready to serve ...", p)
 	router := mux.NewRouter().StrictSlash(true)
-	router.HandleFunc("/", index)
 	router.HandleFunc("/repos", repoIndex)
 	router.HandleFunc("/rec", repoRec)
+	router.HandleFunc("/hello", hello)
+	router.PathPrefix("/").Handler(http.FileServer(http.Dir("./web/")))
+	http.Handle("/", router)
 	// cors.Default() setup the middleware with default options being
 	// all origins accepted with simple methods (GET, POST).
 	handler := cors.Default().Handler(router)
 	log.Fatal(http.ListenAndServe(":"+*port, handler))
 }
 
-func index(w http.ResponseWriter, r *http.Request) {
+func hello(w http.ResponseWriter, r *http.Request) {
 	fmt.Fprintln(w, "Welcome!")
 }
 
@@ -49,6 +49,8 @@ func repoIndex(w http.ResponseWriter, r *http.Request) {
 	fmt.Fprintln(w, "Repo Index!")
 }
 
+// /rec?sp=<short_path>
+// /rec?sp=<short_path>&norm=true
 func repoRec(w http.ResponseWriter, r *http.Request) {
 	sp := r.FormValue("sp")
 	rp := p.RecRaw(sp)

@@ -1,7 +1,7 @@
 
 set -e
 
-PORT_REC=3001
+PORT_WEB=8080
 PORT_REPO=3000
 
 function get_bq_data() {
@@ -13,8 +13,8 @@ function process_data() {
   go run cmd/procrun/procrun.go --in_dir=results --out_dir=processed
 }
 
-function serve_recs() {
-  go run cmd/procserv/procserv.go --in_gob_path=processed/recs.gob --port=$PORT_REC
+function server() {
+  go run cmd/procserv/procserv.go --in_gob_path=processed/recs.gob --port=$PORT_WEB
 }
 
 dbname=bqtest
@@ -48,10 +48,6 @@ function serve_repos() {
   schema_name=$(latest_schema)
   echo $schema_name
   postgrest "host=localhost dbname=$dbname" -a $(whoami) -s $schema_name -p $PORT_REPO
-}
-
-function serve_frontend() {
-  http-server web
 }
 
 function test_api() {
